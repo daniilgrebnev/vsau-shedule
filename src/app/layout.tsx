@@ -9,8 +9,8 @@ export default function RootLayout({
     return (
         <html lang="ru">
         <Head>
-          <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icon.png"></link>
+          <link rel="manifest" href="../../public/manifest.json" />
+          <link rel="apple-touch-icon" href="../../public/logo192.png"></link>
           <meta name="theme-color" content="#fff" />
         </Head>
         <body className='flex items-center justify-center'>
