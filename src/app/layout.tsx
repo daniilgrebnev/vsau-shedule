@@ -11,7 +11,11 @@ export default function RootLayout({
         <Head>
           <link rel="manifest" href="../../public/manifest.json" />
           <link rel="apple-touch-icon" href="../../public/logo192.png"></link>
-          <meta name="theme-color" content="#fff" />
+          <meta name="theme-color" content="#111827" />
+
+            <meta name="msapplication-TileColor" content="#111827"/>
+            <meta name="msapplication-navbutton-color" content="#111827"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="#111827"/>
         </Head>
         <body className='flex items-center justify-center'>
         {children}
