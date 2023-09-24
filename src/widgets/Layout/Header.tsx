@@ -19,7 +19,7 @@ const Header = () => {
                 openSearch ? <div
                     className="absolute flex items-center justify-center top-0 left-0 w-full h-full bg-black bg-opacity-90 ">
                     <div className="bg-gray-900 border-1 border-white overflow-hidden w-full h-full ">
-                        <div className="absolute right-3 top-3 text-red-500 text-xl"
+                        <div className="absolute right-3 top-3 text-red-500 font-black text-3xl"
                              onClick={() => setOpenSearch(false)}>X
                         </div>
                         <Search/>
