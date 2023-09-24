@@ -8,7 +8,7 @@ const Header = () => {
     const [openSearch, setOpenSearch] = useState(false)
     return (
         <div
-            className='flex items-end w-full justify-between p-4 rounded-b-3xl bg-black'>
+            className='flex items-end w-full justify-between p-4 rounded-b-2xl bg-black'>
             <div className=""><LogoIcon fill='white' width={40}/></div>
             <div className="absolute bottom-0 left-0 w-5 h-5 bg-red-700 z-10"></div>
             <div className="text-center text-2xl font-semibold">Расписание</div>
