@@ -16,7 +16,7 @@ export default function RootLayout({
             <meta name="theme-color" content="#111827"/>
             <meta name="msapplication-TileColor" content="#111827"/>
             <meta name="msapplication-navbutton-color" content="#111827"/>
-            <meta name="apple-mobile-web-app-status-bar-style" content="#111827"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="rgb(0, 0, 0, 5 )"/>
         </head>
         <body className='flex items-center justify-center'>
         {children}
