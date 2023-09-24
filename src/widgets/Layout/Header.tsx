@@ -3,24 +3,30 @@ import React, {useState} from 'react'
 import LogoIcon from "@/entities/icons/LogoIcon";
 import SearchIcon from "@/entities/icons/SearchIcon";
 import Search from "@/features/Search";
+import {useAppDispatch, useAppSelector} from "@/hooks";
+import {closeSearch, searchHandler} from "@/store/slices/searchSlice";
 
 const Header = () => {
-    const [openSearch, setOpenSearch] = useState(false)
+    const open = useAppSelector(store => store.search.open)
+    const dispatch = useAppDispatch()
+    const [openSearch, setOpenSearch] = useState(open)
+    console.log(openSearch)
     return (
         <div
             className='flex items-end w-full justify-between p-4 rounded-b-2xl bg-black'>
             <div className=""><LogoIcon fill='white' width={40}/></div>
             <div className="absolute bottom-0 left-0 w-5 h-5 bg-red-700 z-10"></div>
             <div className="text-center text-2xl font-semibold">Расписание</div>
-            <div className="flex items-start justify-center relative -top-1" onClick={() => setOpenSearch(true)}>
+            <div className="flex items-start justify-center relative -top-1"
+                 onClick={() => dispatch(searchHandler())}>
                 <SearchIcon fill='white' width={30}/>
             </div>
             {
-                openSearch ? <div
+                open ? <div
                     className="absolute transition-all flex items-center justify-center top-0 left-0 w-full h-full bg-black bg-opacity-90 ">
                     <div className="bg-gray-900 border-1 border-white overflow-hidden w-full h-full ">
                         <div className="absolute cursor-pointer right-3 top-3 text-red-500 font-black text-3xl"
-                             onClick={() => setOpenSearch(false)}>X
+                             onClick={() => dispatch(closeSearch())}>X
                         </div>
 
                         <Search/>
