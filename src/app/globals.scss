@@ -8,4 +8,22 @@ body {
   font-family: 'Overpass', sans-serif;
 }
 
+input {
+  border: 0;
+  outline: 0;
 
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+
+  &:focus-visible {
+    border: 0;
+    outline: 0;
+  }
+
+  &:focus-within {
+    border: 0;
+    outline: 0;
+  }
+}
