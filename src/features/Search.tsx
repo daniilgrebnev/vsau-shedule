@@ -2,10 +2,12 @@ import React from 'react'
 
 const Search = () => {
     return (
-        <div className='p-4 flex items-center justify-center'>
-            <div className="">
-                <div className="mx-auto border rounded-xl px-6 py-2 text-lg">
-                    <input type='text' className='focus:outline-0 bg-transparent text-inherit'/>
+        <div className=' flex items-center justify-center w-full'>
+            <div className="w-full">
+                <div className="mx-auto border-b rounded-lg mt-16  text-xl w-full">
+                    <input type='text'
+                           placeholder='Поиск'
+                           className='focus-within:outline-0 w-full py-2 px-3 focus:border-0 focus:outline-0 focus-within:border-0 bg-opacity-10 bg-black text-inherit'/>
                 </div>
             </div>
         </div>
