@@ -8,15 +8,17 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ru">
-        <Head>
-          <link rel="manifest" href="../../public/manifest.json" />
-          <link rel="apple-touch-icon" href="../../public/logo192.png"></link>
-          <meta name="theme-color" content="#111827" />
+        <head>
+          <link rel="manifest" href="/manifest.json" />
 
+          <link rel="apple-touch-icon" href="/logo192.png"/>
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+            <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+            <meta name="theme-color" content="#111827" />
             <meta name="msapplication-TileColor" content="#111827"/>
             <meta name="msapplication-navbutton-color" content="#111827"/>
             <meta name="apple-mobile-web-app-status-bar-style" content="#111827"/>
-        </Head>
+        </head>
         <body className='flex items-center justify-center'>
         {children}
         </body>
