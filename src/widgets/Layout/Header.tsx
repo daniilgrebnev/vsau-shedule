@@ -17,11 +17,12 @@ const Header = () => {
             </div>
             {
                 openSearch ? <div
-                    className="absolute flex items-center justify-center top-0 left-0 w-full h-full bg-black bg-opacity-90 ">
+                    className="absolute transition-all flex items-center justify-center top-0 left-0 w-full h-full bg-black bg-opacity-90 ">
                     <div className="bg-gray-900 border-1 border-white overflow-hidden w-full h-full ">
-                        <div className="absolute right-3 top-3 text-red-500 font-black text-3xl"
+                        <div className="absolute cursor-pointer right-3 top-3 text-red-500 font-black text-3xl"
                              onClick={() => setOpenSearch(false)}>X
                         </div>
+
                         <Search/>
                     </div>
                 </div> : <></>

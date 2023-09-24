@@ -7,8 +7,8 @@ export default function Home() {
             <div className="">
                 <Header/>
             </div>
-            <div className="w-full p-4">
-
+            <div className="w-full p-4 h-full flex items-center justify-center">
+                Выберете группу
             </div>
         </main>
     )
