@@ -1,10 +1,16 @@
-import {configureStore} from "@reduxjs/toolkit";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import searchReducer from './slices/searchSlice'
+import sheduleReducer from './slices/sheduleCurrentSlice'
+
+
+const rootReducer = combineReducers({
+    searchReducer,
+    sheduleReducer
+})
 
 const store = configureStore({
-    reducer: {
-        search: searchReducer
-    }
+    reducer: rootReducer
+
 })
 
 export default store

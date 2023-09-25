@@ -27,10 +27,12 @@ const sheduleCurrentSlice = createSlice({
     reducers: {
         getGroup(state, action: PayloadAction<IGroup>) {
             state.initialState.list.push({
-                groupId: 2,
-                sub_group: ''
+                groupId: action.payload.groupId,
+                sub_group: action.payload.sub_group
             })
         }
     }
 })
 
+export const {getGroup} = sheduleCurrentSlice.actions
+export default sheduleCurrentSlice.reducer

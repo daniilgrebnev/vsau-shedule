@@ -7,7 +7,7 @@ import {useAppDispatch, useAppSelector} from "@/hooks";
 import {searchHandler} from "@/store/slices/searchSlice";
 
 const Header = () => {
-    const open = useAppSelector(store => store.search.open)
+    const open = useAppSelector(store => store.searchReducer.open)
     const dispatch = useAppDispatch()
     const [openSearch, setOpenSearch] = useState(open)
     console.log(openSearch)
@@ -15,7 +15,7 @@ const Header = () => {
         <div
             className='flex items-end w-full justify-between p-4 rounded-b-2xl bg-black'>
             <div className=""><LogoIcon fill='white' width={40}/></div>
-            
+
             <div className="text-center text-2xl font-semibold">Расписание</div>
             <div className="flex items-start justify-center relative -top-1"
                  onClick={() => dispatch(searchHandler())}>
