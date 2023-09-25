@@ -1,25 +1,20 @@
 'use client'
 import React, {useState} from 'react'
+import {closeSearch} from "@/store/slices/searchSlice";
+import {useAppDispatch} from "@/hooks";
+import {groupData} from "@/testArrays/test.data";
 
 const Search = () => {
-    const groups = [{
-        id: 1,
-        name: 'Tэ2-5'
-    },
-        {
-            id: 2,
-            name: 'Tм2-5'
-        },
-        {
-            id: 3,
-            name: 'НТТС2-9'
-        }
-    ]
+    const [groups] = useState(groupData)
+    const dispatch = useAppDispatch()
 
 
     const [textInInput, setTextInInput] = useState('')
     return (
         <div className=' flex items-center justify-center w-full p-4'>
+            <div className="absolute cursor-pointer right-3 top-3 text-red-500 font-black text-3xl"
+                 onClick={() => dispatch(closeSearch())}>X
+            </div>
             <div className="w-full">
                 <div className="mx-auto border-b mt-16  text-xl w-11/12">
                     <input type='text'
