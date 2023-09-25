@@ -17,6 +17,7 @@ const initialState: GroupState = {
 interface IGroup {
     groupId: number,
     sub_group: string
+    
 }
 
 const sheduleCurrentSlice = createSlice({
