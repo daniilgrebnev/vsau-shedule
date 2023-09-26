@@ -16,10 +16,11 @@ const SheduleWidget = () => {
         <div className='w-full p-4 h-full flex items-center justify-center'>
             <div className="my-10">
                 <div className="my-2 flex items-center justify-start">Выбранная подгруппа: <p
-                    className='px-10 mx-3 py-2 bg-white bg-opacity-30 rounded-lg'> {groups[currentArray].sub_group}</p>
+                    className='px-10 mx-3 py-2 bg-white bg-opacity-90 text-black rounded-lg'> {groups[currentArray].sub_group}</p>
                 </div>
                 <div className="my-2 flex items-center justify-start">Выбранная группа: <p
-                    className='px-10 mx-3 py-2 bg-white bg-opacity-30 rounded-lg'>{a}</p></div>
+                    className='px-10 mx-3 py-2 bg-white  bg-opacity-90 text-black rounded-lg'>{a}</p>
+                </div>
             </div>
         </div>
     )
