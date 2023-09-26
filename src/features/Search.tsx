@@ -3,39 +3,50 @@ import React, {useState} from 'react'
 import {closeSearch} from "@/store/slices/searchSlice";
 import {useAppDispatch} from "@/hooks";
 import {groupData} from "@/testArrays/test.data";
+import {getGroup} from "@/store/slices/sheduleCurrentSlice";
 
 const Search = () => {
-    const [groups] = useState(groupData)
+
     const [changeGroup, setChangeGroup] = useState(false)
     const dispatch = useAppDispatch()
+    const [groupId, setGroupId] = useState<number>()
+    const [subGroup, setSubGroup] = useState<string>()
 
-
-    const sub_group_array = [{
-        id: 0,
-        name: 'A'
-    },
+    const sub_group_array = [
+        {
+            id: 0,
+            name: 'A'
+        },
         {
             id: 1,
             name: 'Б'
         },
+
     ]
 
+
     const groupHandler = (id: number) => {
-        let groupId: number = id
-        console.log(groupId)
+        setGroupId(id)
         setChangeGroup(true)
-        return groupId
-    }
-    const subGroupHandler = (id: number) => {
-        const sub_groups_list = ['A', 'Б']
-        let subGroup: string = sub_groups_list[id]
-        console.log(subGroup)
-        setChangeGroup(false)
-        return subGroup
+
+
     }
 
-    const writeRedux = () => {
 
+    if (subGroup != null) {
+
+        if (groupId != null) {
+            for (let i = 1; i <= 1; i++) {
+
+                dispatch(closeSearch())
+                dispatch(getGroup({
+                    groupId: groupId,
+                    sub_group: subGroup
+                }))
+                break
+
+            }
+        }
     }
 
 
@@ -54,25 +65,36 @@ const Search = () => {
                 </div>
                 <div className="w-11/12 mx-auto mt-10">
                     {
-                        changeGroup ? <div
-                            className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-30 flex items-center justify-center">
-                            <div className="">
+                        changeGroup ?
+                            <div
+                                className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center">
+                                <div className="">
 
-                                <h1 className='text-2xl text-center'>Выберете группу</h1>
-                                {
+                                    <h1 className='text-2xl my-10 left-0 text-center'>Выберете
+                                        группу</h1>
+                                    <div className="flex items-center justify-between">
 
-                                    sub_group_array.map(i => (
-                                        <div onClick={() => subGroupHandler(i.id)}
-                                             className='p-12 rounded-lg bg-white text-center text-3xl font-semibold m-2 bg-opacity-30'
-                                             key={i.id}>{i.name}</div>
-                                    ))
-                                }</div>
+                                        {
+                                            sub_group_array.map(item => (
+                                                <div
+                                                    key={item.id}
+                                                    onClick={() => setSubGroup(item.name)}
+                                                    className='p-14 rounded-lg bg-white text-center text-3xl font-semibold m-5 bg-opacity-30'
+                                                >
+                                                    {item.name}
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
 
-                        </div> : <></>
+
+                                </div>
+
+                            </div> : <></>
                     }
                     {
                         textInInput !== '' ?
-                            groups.map(item => (
+                            groupData.map(item => (
                                 <div key={item.id} onClick={() => groupHandler(item.id)}
                                      className=" bg-opacity-5 cursor-pointer rounded-lg mb-4 border-b border-blue-600 bg-white w-full p-4 text-xl">
                                     {item.name}
