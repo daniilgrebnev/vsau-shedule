@@ -23,6 +23,7 @@ const MainPage = () => {
             <div className="">
                 <Header/>
             </div>
+
             <SheduleMainWidget/>
         </div>
     )

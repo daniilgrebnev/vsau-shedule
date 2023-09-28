@@ -1,10 +1,12 @@
 'use client'
 import React, {useState} from 'react'
 import LogoIcon from "@/entities/icons/LogoIcon";
-import SearchIcon from "@/entities/icons/SearchIcon";
 import Search from "@/features/Search";
 import {useAppDispatch, useAppSelector} from "@/hooks";
 import {searchHandler} from "@/store/slices/searchSlice";
+import SettingsIcon from "@/entities/icons/SettingsIcon";
+import Link from "next/link";
+import SearchIcon from "@/entities/icons/SearchIcon";
 
 const Header = () => {
     const open = useAppSelector(store => store.searchReducer.open)
@@ -17,9 +19,16 @@ const Header = () => {
             <div className=""><LogoIcon fill='white' width={40}/></div>
 
             <div className="text-center text-2xl font-semibold">Расписание</div>
-            <div className="flex items-start justify-center relative -top-1"
-                 onClick={() => dispatch(searchHandler())}>
-                <SearchIcon fill='white' width={30}/>
+            <div className="flex items-center justify-between w-1/5">
+                <div className="flex items-start justify-center relative -top-1"
+                     onClick={() => dispatch(searchHandler())}>
+                    <SearchIcon fill='white' width={30}/>
+                </div>
+                <div className="flex items-start justify-center relative -top-1">
+                    <Link href='settings'>
+                        <SettingsIcon fill='white' width={30}/>
+                    </Link>
+                </div>
             </div>
             {
                 open ? <div
