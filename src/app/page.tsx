@@ -4,7 +4,7 @@ import store from "@/store";
 
 import React from "react";
 import {Provider} from "react-redux";
-import MainPage from "@/pages/MainPage";
+import MainPage from "@/widgets/MainPage";
 
 
 export default function Home() {

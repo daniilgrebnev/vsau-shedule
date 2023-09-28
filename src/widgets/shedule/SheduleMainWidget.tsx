@@ -8,9 +8,9 @@ import SheduleWidget from "@/widgets/shedule/SheduleWidget";
 const SheduleMainWidget = () => {
     const dispatch = useAppDispatch()
     const groups = useAppSelector(state => state.sheduleReducer.initialState.list)
-    const groupId = groups[groups.length - 1].groupId
-    const subGroup = groups[groups.length - 1].subGroup
-   
+    const groupId = groups[groups.length - 1]?.groupId
+    const subGroup = groups[groups.length - 1]?.subGroup
+
     return (
         <div>{
             groupId == "null" && subGroup == "null" ?
