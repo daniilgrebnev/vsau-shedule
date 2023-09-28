@@ -5,7 +5,7 @@ export const groupData = [
         sub_groups: [
             {
                 id: 0,
-                name: 'a',
+                name: 'А',
                 week: [
                     {
                         id: 0,
@@ -113,7 +113,7 @@ export const groupData = [
             },
             {
                 id: 1,
-                name: 'b'
+                name: 'Б'
             }
 
         ]

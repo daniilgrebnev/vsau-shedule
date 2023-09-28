@@ -9,7 +9,7 @@ const Search = () => {
 
     const [changeGroup, setChangeGroup] = useState(false)
     const dispatch = useAppDispatch()
-    const [groupId, setGroupId] = useState<number>()
+    const [groupId, setGroupId] = useState<string>()
     const [subGroup, setSubGroup] = useState<string>()
 
     const sub_group_array = [
@@ -25,7 +25,7 @@ const Search = () => {
     ]
 
 
-    const groupHandler = (id: number) => {
+    const groupHandler = (id: string) => {
         setGroupId(id)
         setChangeGroup(true)
 
@@ -41,7 +41,7 @@ const Search = () => {
                 dispatch(closeSearch())
                 dispatch(getGroup({
                     groupId: groupId,
-                    sub_group: subGroup
+                    subGroup: subGroup
                 }))
                 break
 
@@ -78,7 +78,7 @@ const Search = () => {
                                             sub_group_array.map(item => (
                                                 <div
                                                     key={item.id}
-                                                    onClick={() => setSubGroup(item.name)}
+                                                    onClick={() => setSubGroup(item.id.toString())}
                                                     className='p-10 relative shadow-2xl shadow-blue-300 overflow-hidden rounded-lg bg-white text-black text-opacity-70 text-center text-3xl font-semibold m-5 bg-opacity-90'
                                                 >
                                                     {/*<div*/}
@@ -97,7 +97,7 @@ const Search = () => {
                     {
                         textInInput !== '' ?
                             groupData.map(item => (
-                                <div key={item.id} onClick={() => groupHandler(item.id)}
+                                <div key={item.id} onClick={() => groupHandler(item.id.toString())}
                                      className=" bg-opacity-5 cursor-pointer rounded-lg mb-4 border-b border-blue-600 bg-white w-full p-4 text-xl">
                                     {item.name}
                                 </div>
