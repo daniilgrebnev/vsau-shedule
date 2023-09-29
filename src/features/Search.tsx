@@ -67,8 +67,8 @@ const Search = () => {
                     {
                         changeGroup ?
                             <div
-                                className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-100 flex items-center justify-center">
-                                <div className="">
+                                className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-10 flex items-end justify-center">
+                                <div className="animation-sub-group ">
 
                                     <h1 className='text-2xl my-10 left-0 text-center'>Выберете
                                         подгруппу</h1>

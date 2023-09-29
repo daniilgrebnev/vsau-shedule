@@ -27,3 +27,24 @@ input {
     outline: 0;
   }
 }
+
+.animation-sub-group {
+  padding: 40px;
+  width: 100%;
+
+  height: 400px;
+  background: rgba(0, 0, 0, 0.30);
+  position: relative;
+  animation: subGroup .5s ease-in-out;
+  border-radius: 16px;
+  transition: all .5s ease;
+}
+
+@keyframes subGroup {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
