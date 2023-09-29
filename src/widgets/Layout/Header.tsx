@@ -21,7 +21,7 @@ const Header = () => {
 
                 <div className="text-center text-2xl font-semibold ml-3">Расписание</div>
             </div>
-            <div className="flex items-center justify-between w-1/5">
+            <div className="flex items-center justify-between w-[23%]">
                 <div className="flex items-start justify-center relative -top-1"
                      onClick={() => dispatch(searchHandler())}>
                     <SearchIcon fill='white' width={30}/>
