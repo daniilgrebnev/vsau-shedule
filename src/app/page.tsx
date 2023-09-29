@@ -6,10 +6,12 @@ import React, {useEffect, useState} from "react";
 import {Provider} from "react-redux";
 import MainPage from "@/widgets/MainPage";
 import LogoIcon from "@/entities/icons/LogoIcon";
+import packages from "../../package.json";
 
 
 export default function Home() {
     const [domLoaded, setDomLoaded] = useState(false);
+    const version = packages.version
 
     useEffect(() => {
         let timeFunc = setTimeout(() => {
@@ -30,7 +32,7 @@ export default function Home() {
                     <MainPage/>
                 </main> :
                 <div className='w-[524px] relative h-[100dvh] bg-gray-900 flex items-center justify-center'>
-                    <div className="absolute bottom-0 left-0 text-white text-sm p-4">Version 0.0.5(dev)</div>
+                    <div className="absolute bottom-0 left-0 text-white text-sm p-4">Version: v{version}(beta)</div>
                     <div className=" flex items-center flex-col justify-between h-8/12 ">
                         <div className="animate-bounce">
                             <LogoIcon fill={`white`} width={150}/>

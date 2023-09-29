@@ -5,9 +5,11 @@ import Header from "@/widgets/Layout/Header";
 import SheduleMainWidget from "@/widgets/shedule/SheduleMainWidget";
 import {useAppDispatch} from "@/hooks";
 import {getGroup} from "@/store/slices/sheduleCurrentSlice";
+import packages from '../../package.json'
 
 const MainPage = () => {
     const dispatch = useAppDispatch()
+    const version = packages.version
     const subGroup: any = localStorage.getItem("subGroup")
     if (typeof window !== "undefined") {
 
