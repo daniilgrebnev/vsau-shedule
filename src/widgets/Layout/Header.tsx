@@ -16,9 +16,11 @@ const Header = () => {
     return (
         <div
             className='flex items-end w-full justify-between p-4 rounded-b-2xl bg-black'>
-            <div className=""><LogoIcon fill='white' width={40}/></div>
+            <div className="flex items-end justify-between">
+                <div className="flex items-center"><LogoIcon fill='white' width={40}/></div>
 
-            <div className="text-center text-2xl font-semibold">Расписание</div>
+                <div className="text-center text-2xl font-semibold ml-3">Расписание</div>
+            </div>
             <div className="flex items-center justify-between w-1/5">
                 <div className="flex items-start justify-center relative -top-1"
                      onClick={() => dispatch(searchHandler())}>
