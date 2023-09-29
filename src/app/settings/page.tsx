@@ -11,13 +11,11 @@ const Settings = () => {
     const resetApp = () => {
         router.back()
         localStorage.clear()
-        window.location.reload()
-        window.location.reload()
+
     }
 
     const resetPopup = (bool: boolean) => {
         setResetAlert(bool)
-
     }
     return (
         <div className='w-[524px] h-[100dvh] relative bg-gray-900 text-white overflow-hidden p-5'>
