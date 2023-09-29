@@ -8,24 +8,39 @@ import {getGroup} from "@/store/slices/sheduleCurrentSlice";
 
 const MainPage = () => {
     const dispatch = useAppDispatch()
+    const subGroup: any = localStorage.getItem("subGroup")
     if (typeof window !== "undefined") {
-        const groupId: any = window.localStorage.getItem("groupId")
-        const subGroup: any = localStorage.getItem("subGroup")
-        dispatch(getGroup({
+
+        if (subGroup !== null) {
+            const groupId: any = window.localStorage.getItem("groupId")
+            const subGroup: any = localStorage.getItem("subGroup")
+            dispatch(getGroup({
                 groupId: groupId,
                 subGroup: subGroup
-            }
-        ))
-    }
-    return (
+            }))
+            console.log("Get in local")
+        } else {
+            console.log('SET in local')
+            localStorage.setItem("groupId", '-1')
+            localStorage.setItem("subGroup", '-1')
+            const groupId: any = window.localStorage.getItem("groupId")
+            const subGroup: any = localStorage.getItem("subGroup")
+            dispatch(getGroup({
+                groupId: groupId,
+                subGroup: subGroup
+            }))
 
-        <div>
-            <div className="">
-                <Header/>
+        }
+        return (
+
+            <div>
+                <div className="">
+                    <Header/>
+                </div>
+
+                <SheduleMainWidget/>
             </div>
-
-            <SheduleMainWidget/>
-        </div>
-    )
+        )
+    }
 }
 export default MainPage

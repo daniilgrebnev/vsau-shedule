@@ -13,7 +13,7 @@ const SheduleMainWidget = () => {
 
     return (
         <div>{
-            groupId == "null" && subGroup == "null" ?
+            groupId == "-1" && subGroup == "-1" ?
                 <div
                     className='className="w-full p-4 h-[90dvh] font-semibold text-2xl flex items-center justify-center'>
                     <div className="">
