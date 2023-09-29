@@ -70,7 +70,7 @@ const Search = () => {
                                 className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-10 flex items-end justify-center">
                                 <div className="animation-sub-group ">
 
-                                    <h1 className='text-xl my-10 left-0 text-center'>Выберете
+                                    <h1 className='text-2xl my-10 left-0 text-center'>Выберете
                                         подгруппу</h1>
                                     <div className="flex items-center justify-between">
 
@@ -79,7 +79,7 @@ const Search = () => {
                                                 <div
                                                     key={item.id}
                                                     onClick={() => setSubGroup(item.id.toString())}
-                                                    className='p-7 relative shadow-lg shadow-blue-600 overflow-hidden rounded-lg bg-white text-black text-opacity-70 text-center text-3xl font-semibold m-5 bg-opacity-90'
+                                                    className='p-10 relative shadow-lg shadow-blue-600 overflow-hidden rounded-lg bg-white text-black text-opacity-70 text-center text-4xl font-semibold m-5 bg-opacity-90'
                                                 >
                                                     {/*<div*/}
                                                     {/*    className="w-36 absolute left-0 bottom-2 h-3 bg-blue-200 -rotate-45"></div>*/}
