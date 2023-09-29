@@ -14,7 +14,7 @@ export default function Home() {
     useEffect(() => {
         let timeFunc = setTimeout(() => {
             setDomLoaded(true);
-        }, 2000)
+        }, 1000)
 
         return () => {
             clearTimeout(timeFunc)
@@ -31,7 +31,7 @@ export default function Home() {
                 </main> :
                 <div className='w-[524px] relative h-[100dvh] bg-gray-900 flex items-center justify-center'>
                     <div className=" flex items-center flex-col justify-between h-8/12 ">
-                        <div className="animate-pulse">
+                        <div className="animate-bounce">
                             <LogoIcon fill={`white`} width={150}/>
                         </div>
                         <p className='text-gray-900 bg-white bg-opacity-70 px-6 rounded-lg py-3 my-10 font-semibold text-2xl text-center'>Расписание</p>

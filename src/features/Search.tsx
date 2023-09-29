@@ -79,7 +79,7 @@ const Search = () => {
                                                 <div
                                                     key={item.id}
                                                     onClick={() => setSubGroup(item.id.toString())}
-                                                    className='p-10 relative shadow-2xl shadow-blue-300 overflow-hidden rounded-lg bg-white text-black text-opacity-70 text-center text-3xl font-semibold m-5 bg-opacity-90'
+                                                    className='p-10 relative shadow-xl shadow-blue-600 overflow-hidden rounded-lg bg-white text-black text-opacity-70 text-center text-3xl font-semibold m-5 bg-opacity-90'
                                                 >
                                                     {/*<div*/}
                                                     {/*    className="w-36 absolute left-0 bottom-2 h-3 bg-blue-200 -rotate-45"></div>*/}
