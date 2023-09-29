@@ -30,9 +30,9 @@ input {
 
 .animation-sub-group {
   padding: 40px;
-  width: 100%;
-
   height: 400px;
+  width: 80%;
+  margin-bottom: 50px;
   background: rgba(0, 0, 0, 0.30);
   position: relative;
   animation: subGroup .3s ease-in-out;
