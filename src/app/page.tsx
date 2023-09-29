@@ -34,7 +34,7 @@ export default function Home() {
                         <div className="animate-bounce">
                             <LogoIcon fill={`white`} width={150}/>
                         </div>
-                        <p className='text-gray-900 bg-white bg-opacity-70 px-6 rounded-lg py-3 my-10 font-semibold text-2xl text-center'>
+                        <p className='text-white px-6 rounded-lg py-3 my-10 font-semibold text-2xl text-center'>
                             Загрузка расписания...
                         </p>
                     </div>
