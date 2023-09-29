@@ -1,7 +1,6 @@
 'use client'
 import './globals.scss'
 import Head from "next/head";
-import {Meta} from "next/dist/lib/metadata/generate/meta";
 
 export default function RootLayout({
                                        children,
@@ -16,10 +15,10 @@ export default function RootLayout({
             <link rel="apple-touch-icon" href="/logo192.png"/>
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
             <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-            <Meta name="theme-color" content="#000"/>
-            <Meta name="msapplication-TileColor" content="#000"/>
-            <Meta name="msapplication-navbutton-color" content="#000"/>
-            <Meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
+            <meta name="theme-color" content="#000"/>
+            <meta name="msapplication-TileColor" content="#000"/>
+            <meta name="msapplication-navbutton-color" content="#000"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
         </Head>
         <body className='flex items-center justify-center bg-gray-900'>
 
