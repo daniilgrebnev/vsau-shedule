@@ -1,6 +1,5 @@
 'use client'
 import './globals.scss'
-import Head from "next/head";
 
 export default function RootLayout({
                                        children,
@@ -9,9 +8,8 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ru">
-        <Head>
+        <head>
             <link rel="manifest" href="/manifest.json"/>
-
             <link rel="apple-touch-icon" href="/logo192.png"/>
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
             <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
@@ -19,7 +17,7 @@ export default function RootLayout({
             <meta name="msapplication-TileColor" content="#000"/>
             <meta name="msapplication-navbutton-color" content="#000"/>
             <meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
-        </Head>
+        </head>
         <body className='flex items-center justify-center bg-gray-900'>
 
         {children}
