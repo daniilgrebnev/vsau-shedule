@@ -30,6 +30,7 @@ export default function Home() {
                     <MainPage/>
                 </main> :
                 <div className='w-[524px] relative h-[100dvh] bg-gray-900 flex items-center justify-center'>
+                    <div className="absolute bottom-0 left-0 text-white text-sm p-1">Version 0.0.4(dev)</div>
                     <div className=" flex items-center flex-col justify-between h-8/12 ">
                         <div className="animate-bounce">
                             <LogoIcon fill={`white`} width={150}/>
