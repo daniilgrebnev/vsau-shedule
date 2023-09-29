@@ -14,7 +14,7 @@ export default function Home() {
     useEffect(() => {
         let timeFunc = setTimeout(() => {
             setDomLoaded(true);
-        }, 1000)
+        }, 2000)
 
         return () => {
             clearTimeout(timeFunc)
@@ -34,7 +34,9 @@ export default function Home() {
                         <div className="animate-bounce">
                             <LogoIcon fill={`white`} width={150}/>
                         </div>
-                        <p className='text-gray-900 bg-white bg-opacity-70 px-6 rounded-lg py-3 my-10 font-semibold text-2xl text-center'>Расписание</p>
+                        <p className='text-gray-900 bg-white bg-opacity-70 px-6 rounded-lg py-3 my-10 font-semibold text-2xl text-center'>
+                            Загрузка расписания...
+                        </p>
                     </div>
                 </div>
             }
