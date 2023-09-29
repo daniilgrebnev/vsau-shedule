@@ -20,7 +20,7 @@ export default function RootLayout({
         </head>
         <body className='flex items-center justify-center'>
 
-        {children}d
+        {children}
 
         </body>
         </html>
