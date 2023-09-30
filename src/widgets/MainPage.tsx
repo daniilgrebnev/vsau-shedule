@@ -5,11 +5,12 @@ import Header from "@/widgets/Layout/Header";
 import SheduleMainWidget from "@/widgets/shedule/SheduleMainWidget";
 import {useAppDispatch} from "@/hooks";
 import {getGroup} from "@/store/slices/sheduleCurrentSlice";
-import packages from '../../package.json'
+import weekNum from "@/features/functions/weekInit";
 
 const MainPage = () => {
     const dispatch = useAppDispatch()
-    const version = packages.version
+
+    const week = weekNum
     const subGroup: any = localStorage.getItem("subGroup")
     if (typeof window !== "undefined") {
 
@@ -39,7 +40,9 @@ const MainPage = () => {
                 <div className="">
                     <Header/>
                 </div>
+                <div className="">
 
+                </div>
                 <SheduleMainWidget/>
             </div>
         )
