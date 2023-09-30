@@ -14,12 +14,12 @@ import moment from "moment";
 export default function Home() {
     const [domLoaded, setDomLoaded] = useState(false);
     const version = packages.version
-    
+
     console.log(moment().locale("ru").format('dddd'))
     useEffect(() => {
         let timeFunc = setTimeout(() => {
             setDomLoaded(true);
-        }, 0)
+        }, 1500)
 
         return () => {
             clearTimeout(timeFunc)
