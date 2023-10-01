@@ -15,7 +15,7 @@ const Header = () => {
     console.log(openSearch)
     return (
         <div
-            className='flex items-end w-full justify-between p-4 rounded-b-2xl bg-black'>
+            className='flex items-end w-full z-50 justify-between p-4 rounded-b-2xl bg-black'>
             <div className="flex items-end justify-between">
                 <div className="flex items-center"><LogoIcon fill='white' width={40}/></div>
 
@@ -35,7 +35,7 @@ const Header = () => {
             {
                 open ? <div
                     className="absolute transition-all flex items-center justify-center top-0 left-0 w-full h-full bg-black bg-opacity-90 ">
-                    <div className="bg-gray-900 border-1 border-white overflow-hidden w-full h-full ">
+                    <div className="bg-gray-900 border-1 z-40 border-white overflow-hidden w-full h-full ">
                         <Search/>
                     </div>
                 </div> : <></>

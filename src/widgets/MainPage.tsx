@@ -43,7 +43,9 @@ const MainPage = () => {
                 <div className="">
 
                 </div>
-                <SheduleMainWidget/>
+                <div className="z-10">
+                    <SheduleMainWidget/>
+                </div>
             </div>
         )
     }
