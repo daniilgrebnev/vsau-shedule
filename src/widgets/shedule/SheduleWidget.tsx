@@ -2,7 +2,6 @@ import React from 'react'
 import {useAppSelector} from "@/hooks";
 import {groupData} from "@/testArrays/test.data";
 import weekInit from "@/features/functions/weekInit";
-import Calendar from "@/features/Calendar";
 
 const SheduleWidget = () => {
 
@@ -17,25 +16,17 @@ const SheduleWidget = () => {
 
     const weekData = weekInit
     return (
-        <div className='p-4'>
+        <div className='p-4 py-1'>
             <div className="flex items-start justify-between font-semibold text">
-                <div className="flex flex-col relative h-full justify-between items-center ">
-
-
-                    <p className="text-5xl rounded-lg  text-center py-7">{groupName}<span
-                        className="lowercase">{subGroup}</span></p>
-                </div>
-                <div className="">
-                    <div
-                        className="rounded-lg mb-1 bg-black py-2 px-4 bg-opacity-90 relative text-lg text-center text-white">
-                        {weekData.parity}
-                    </div>
-
-                    <Calendar month={weekData.month} day={weekData.day} dayOfWeek={weekData.dayOfWeek}/>
-                </div>
+                <div className="bg-black rounded-bl-lg px-3 py-1">{weekData.parity}</div>
+                <div className="bg-black px-3 py-1 first-letter:uppercase">{weekData.dayOfWeek}</div>
+                <div className="bg-black rounded-br-lg px-3 py-1">{weekData.day}</div>
             </div>
-            <div className='w-full p-4 h-full flex items-center justify-center'>
 
+            <div className="mt-7 text-center"><span
+                className='text-2xl font-semibold'>{groupName}{subGroup}</span></div>
+            <div className='w-full p-4 h-full flex items-center justify-center'>
+                
 
             </div>
         </div>
