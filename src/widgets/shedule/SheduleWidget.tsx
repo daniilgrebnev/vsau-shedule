@@ -2,6 +2,7 @@ import React from 'react'
 import {useAppSelector} from "@/hooks";
 import {groupData} from "@/testArrays/test.data";
 import weekInit from "@/features/functions/weekInit";
+import Week from "@/widgets/shedule/Week";
 
 const SheduleWidget = () => {
 
@@ -26,8 +27,7 @@ const SheduleWidget = () => {
             <div className="mt-7 text-center"><span
                 className='text-2xl font-semibold'>{groupName}{subGroup}</span></div>
             <div className='w-full p-4 h-full flex items-center justify-center'>
-                
-
+                <Week/>
             </div>
         </div>
     )
