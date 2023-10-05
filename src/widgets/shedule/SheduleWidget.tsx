@@ -17,15 +17,15 @@ const SheduleWidget = () => {
 
     const weekData = weekInit
     return (
-        <div className='p-4 py-1'>
-            <div className="flex items-start gap-1 text-center justify-between font-semibold text">
+        <div className='px-2 py-1'>
+            <div className="flex items-start mx-2 gap-1 text-center justify-between font-semibold text">
                 <div className="bg-black rounded-bl-lg px-3 w-1/2 py-2">{weekData.parity}</div>
                 <div className="bg-black rounded-br-lg px-3 w-1/2 py-2">{weekData.day}</div>
             </div>
 
             <div className="mt-7 text-center"><span
                 className='text-2xl font-semibold'>{groupName}{subGroup}</span></div>
-            <div className='w-full p-4 h-full flex items-center justify-center'>
+            <div className='w-full mt-7 h-full flex items-center justify-center'>
                 <Week/>
             </div>
         </div>
