@@ -37,7 +37,7 @@ const Week = () => {
                 weekDays.map((item, index) => (
                     <div className='w-full'>
                         <div
-                            className={`bg-black text-center ${item.name.toLowerCase() == stateDay ? 'w-[140px]' : 'w-[40px]'} p-1 rounded-lg transition-all`}
+                            className={`bg-black overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[140px]' : 'w-[40px]'} p-3 rounded-lg transition-all`}
                             onClick={() => activeItem(item.name)}>
                             {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
                         </div>
