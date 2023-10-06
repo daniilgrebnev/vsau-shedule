@@ -101,7 +101,7 @@ const Week = () => {
                             <div>
 
                                 <div key={item.name}
-                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-green-400' : 'border-t-4 border-black'} bg-black overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[130px]' : ' w-[50px]'} flex items-center justify-center  h-12 rounded-lg duration-300 transition-all`}
+                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-green-400' : 'border-t-4 border-black'} bg-black overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[130px]' : ' w-[50px]'} flex items-center justify-center ease-in-out  h-12 rounded-lg duration-300 transition-all`}
                                      onClick={() => activeItem(item.name, item.activeState)}>
                                     {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 
@@ -120,11 +120,11 @@ const Week = () => {
                 {
                     weekDays.map((item) => (
                         <div style={styles} onTouchMove={mouseMoveHandler} onTouchStart={mouseStartHandler}
-                             className='transition-all duration-300 '>
+                             className='transition-all duration-300 ease-in-out '>
 
                             <div
 
-                                className={`transition-all flex items-center justify-center h-full relative  bottom-0  w-screen overflow-hidden`}
+                                className={`transition-all ease-in-out  flex items-center justify-center h-full relative  bottom-0  w-screen overflow-hidden`}
                                 key={item.name}>
 
                                 <div className="text-4xl  w-10/12 h-[90%] flex items-center justify-center">
