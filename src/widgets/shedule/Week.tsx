@@ -56,11 +56,11 @@ const Week = () => {
         }
 
 
-        if (diff < -10) {
+        if (diff < -5) {
             next()
             console.log(activeTranslate)
 
-        } else if (diff > 10) {
+        } else if (diff > 5) {
             prev()
             console.log(activeTranslate)
 
