@@ -2,7 +2,7 @@
   "theme_color": "#212121",
   "background_color": "#212121",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "natural",
   "scope": "/",
   "start_url": ".",
   "name": "Расписание",
