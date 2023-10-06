@@ -11,27 +11,28 @@ const Week = () => {
         {
             name: 'Вторник',
             shortName: 'Вт',
-            activeState: '-390px'
+            activeState: '-100%'
         },
         {
             name: 'Среда',
             shortName: 'Ср',
-            activeState: '-780px'
+            activeState: '-200%'
         },
         {
             name: 'Четверг',
             shortName: 'Чт',
-            activeState: '-1170px'
+            activeState: '-300%'
         },
         {
             name: 'Пятница',
             shortName: 'Пт',
-            activeState: '-1560px'
+            activeState: '-400%'
         },
 
     ]
+
     const [stateDay, setStateDay] = useState<string>(weekData.dayOfWeek)
-    const [activeTranslate, setActiveTranslate] = useState('0px')
+    const [activeTranslate, setActiveTranslate] = useState(weekDays.find(name => name.name.toLowerCase() === weekData.dayOfWeek.toLowerCase())?.activeState)
 
     const activeItem = (name: string, translate: string) => {
         setStateDay(name.toLowerCase())
@@ -44,20 +45,20 @@ const Week = () => {
     console.log('today ' + weekData.dayOfWeek)
     console.log(activeTranslate)
     return (
-        <div className='mx-auto  '>
+        <div className='w-full mx-auto flex justify-center items-center'>
             <div className="">
-                <div className='flex  w-full justify-between gap-1'>
+                <div className='flex  w-full justify-center items-center gap-x-1'>
                     {
                         weekDays.map((item) => (
                             <div>
-                                <div className='w-full' key={item.name}>
-                                    <div
-                                        className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-green-400' : 'border-t-4 border-black'} bg-black overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[150px]' : 'w-[50px]'}  py-3 rounded-lg transition-all`}
-                                        onClick={() => activeItem(item.name, item.activeState)}>
-                                        {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 
-                                    </div>
+                                <div key={item.name}
+                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-green-400' : 'border-t-4 border-black'} bg-black overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[130px]' : ' w-[50px]'} flex items-center justify-center  h-12 rounded-lg transition-all`}
+                                     onClick={() => activeItem(item.name, item.activeState)}>
+                                    {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
+
                                 </div>
+
 
                             </div>
                         ))

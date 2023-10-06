@@ -1,10 +1,10 @@
 import moment from "moment";
 
 const weekNum = Number(moment().format('w'))
-const parity = (weekNum % 2 === 0 ? 'Числитель' : 'Знаменатель')
+const parity = (weekNum % 2 !== 0 ? 'Числитель' : 'Знаменатель')
 
 const weekday = moment().locale("ru").format('dddd')
-const day = moment().format('LL')
+const day = moment().format('ll')
 
 
 const weekData = {
