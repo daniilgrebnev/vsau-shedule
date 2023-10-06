@@ -24,8 +24,8 @@ const SheduleWidget = () => {
             </div>
 
             <div className="mt-7 text-center"><span
-                className='text-2xl font-semibold'>{groupName}{subGroup}</span></div>
-            <div className='w-full mt-7 h-full flex items-center justify-center'>
+                className='text-4xl my-4 font-semibold'>{groupName}{subGroup}</span></div>
+            <div className='w-full p-4 h-full flex items-center justify-center'>
                 <Week/>
             </div>
         </div>
