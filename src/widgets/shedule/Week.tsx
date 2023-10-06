@@ -106,7 +106,6 @@ const Week = () => {
                                     {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 
                                 </div>
-                                f
 
 
                             </div>
