@@ -31,10 +31,10 @@ export default function Home() {
 
         <Provider store={store}>
             {domLoaded ?
-                <main className="w-[524px] h-[100dvh] relative bg-gray-900 text-white overflow-hidden ">
+                <main className="w-[524px] h-[100dvh] relative bg-bg-main text-white overflow-hidden ">
                     <MainPage/>
                 </main> :
-                <div className='w-[524px] relative h-[100dvh] bg-gray-900 flex items-center justify-center'>
+                <div className='w-[524px] relative h-[100dvh] bg-bg-main flex items-center justify-center'>
                     <div className="absolute bottom-0 left-0 text-white text-sm p-4">Version: v{version}</div>
                     <div className=" flex items-center flex-col justify-between h-8/12 ">
                         <div className="animate-bounce">

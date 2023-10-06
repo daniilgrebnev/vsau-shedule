@@ -101,7 +101,7 @@ const Week = () => {
                             <div>
 
                                 <div key={item.name}
-                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-green-400' : 'border-t-4 border-black'} bg-black overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[130px]' : ' w-[50px]'} flex items-center justify-center ease-in-out  h-12 rounded-lg duration-300 transition-all`}
+                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-border-week-today' : 'border-t-4 border-border-week'} shadow-lg bg-bg-header overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[130px]' : ' w-[50px]'} flex items-center justify-center ease-in-out  h-12 rounded-lg duration-300 transition-all`}
                                      onClick={() => activeItem(item.name, item.activeState)}>
                                     {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 

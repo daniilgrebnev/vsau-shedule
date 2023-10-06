@@ -52,16 +52,16 @@ const Search = () => {
 
     const [textInInput, setTextInInput] = useState('')
     return (
-        <div className=' flex items-center justify-center w-full p-4'>
-            <div className="absolute cursor-pointer right-3 top-3 text-red-500 font-black text-3xl"
+        <div className='flex items-center justify-center w-full p-4'>
+            <div className="absolute cursor-pointer right-3 top-3 font-semibold text-red-reset text-3xl"
                  onClick={() => dispatch(closeSearch())}>X
             </div>
             <div className="w-full">
-                <div className="mx-auto border-b mt-16  text-xl w-11/12">
+                <div className="mx-auto border-b-white  border-b-2 mt-16  text-xl w-11/12">
                     <input type='text'
                            onChange={(event) => setTextInInput(event.target.value)}
                            placeholder='Пример: ТЭ-2-5'
-                           className='focus-within:outline-0 w-full py-2 px-3 focus:border-0 bg-transparent focus:outline-0 focus-within:border-0 bg-opacity-10 text-inherit'/>
+                           className='focus-within:outline-0 w-full  py-2 px-3 focus-within: focus-within:border-b-2   bg-black focus:outline-0 focus-within:border-0 bg-opacity-0 text-inherit'/>
                 </div>
                 <div className="w-11/12 mx-auto mt-10">
                     {
@@ -97,7 +97,7 @@ const Search = () => {
                         textInInput !== '' ?
                             groupData.map(item => (
                                 <div key={item.id} onClick={() => groupHandler(item.id.toString())}
-                                     className=" bg-opacity-5 cursor-pointer rounded-lg mb-4 border-b border-blue-600 bg-white w-full p-4 text-xl">
+                                     className=" bg-opacity-100 cursor-pointer rounded-lg mb-4 border-b border-ai bg-bg-header w-full p-4 text-xl">
                                     {item.name}
                                 </div>
                             ))

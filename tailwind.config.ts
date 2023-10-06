@@ -8,6 +8,21 @@ const config: Config = {
         './src/**/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        colors: {
+            "bg-main": '#323232',
+            "light-blue": "#7dc8fb",
+            'bg-header': '#212121',
+            "dark-blue": "#042484",
+            "cyan-dark": "0689e2",
+            'azure': "#035a95",
+            "black": '#000',
+            "ai": '#0073ff',
+            "white": "#fff",
+            'border-week-today': '#14FFEC',
+            "border-week": "#084C4F",
+            "red-reset": "#E4473F",
+            "green-reset": "#2D8F38"
+        },
         extend: {
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

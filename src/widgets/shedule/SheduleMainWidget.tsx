@@ -19,7 +19,7 @@ const SheduleMainWidget = () => {
                     <div className="">
                         <div className="font-normal">Выберете группу</div>
                         <div
-                            className="flex items-center  w-9/12 justify-between py-3 px-5 bg-black bg-opacity-70 rounded-lg mx-auto my-4 font-normal text-xl ">
+                            className="flex items-center  w-9/12 justify-between py-3 px-5 bg-blue bg-opacity-70 rounded-lg mx-auto my-4 font-normal text-xl ">
                             <p>Поиск</p>
                             <p className='flex items-start justify-end w-full'
                                onClick={() => dispatch(searchHandler())}>
