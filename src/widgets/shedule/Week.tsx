@@ -74,16 +74,16 @@ const Week = () => {
     const next = () => {
 
         const day = weekDays.find(item => item.activeState === activeTranslate + 100)
-        setStateDay(day?.name.toLowerCase())
-        setActiveTranslate(day?.activeState)
+        setStateDay(day ? day.name.toLowerCase() : 'пятница')
+        setActiveTranslate(day ? day.activeState : -400)
         console.log(day)
         console.log(stateDay)
     }
     const prev = () => {
 
         const day = weekDays.find(item => item.activeState === activeTranslate - 100)
-        setStateDay(day?.name.toLowerCase())
-        setActiveTranslate(day?.activeState)
+        setStateDay(day ? day.name.toLowerCase() : 'понедельник')
+        setActiveTranslate(day ? day.activeState : 0)
 
         console.log(stateDay)
 

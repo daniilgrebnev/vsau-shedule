@@ -3,7 +3,12 @@ import moment from "moment";
 const weekNum = Number(moment().format('w'))
 const parity = (weekNum % 2 !== 0 ? 'Числитель' : 'Знаменатель')
 
-const weekday = moment().locale("ru").format('dddd')
+let weekday = moment().locale("ru").format('dddd')
+
+if (weekday === 'суббота' || weekday === 'воскресенье') {
+    weekday = 'понедельник'
+}
+
 const day = moment().format('ll')
 
 
