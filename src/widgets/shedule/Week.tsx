@@ -93,7 +93,7 @@ const Week = () => {
     }
 
     return (
-        <div className='w-full mx-auto flex justify-center items-center'>
+        <div className='w-full mt-12 mx-auto flex justify-center items-center'>
             <div className="">
                 <div className='flex  w-full justify-center items-center gap-x-1'>
                     {
