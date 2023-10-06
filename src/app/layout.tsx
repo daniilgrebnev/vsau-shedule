@@ -1,6 +1,10 @@
 'use client'
 import './globals.scss'
 
+window.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+}, {passive: false});
+
 export default function RootLayout({
                                        children,
                                    }: {
@@ -18,7 +22,7 @@ export default function RootLayout({
             <meta name="msapplication-navbutton-color" content="#000"/>
             <meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
         </head>
-        <body className='flex items-center justify-center bg-gray-900'>
+        <body className='flex fixed left-0 top-0 items-center justify-center bg-gray-900'>
 
         {children}
 
