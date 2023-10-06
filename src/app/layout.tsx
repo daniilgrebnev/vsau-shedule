@@ -1,9 +1,6 @@
 'use client'
 import './globals.scss'
 
-window.addEventListener('touchmove', function (e) {
-    e.preventDefault();
-}, {passive: false});
 
 export default function RootLayout({
                                        children,

@@ -3,6 +3,17 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap');
 
+html {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
 
 body {
   font-family: 'Overpass', sans-serif;
