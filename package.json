@@ -1,6 +1,6 @@
 {
   "name": "vsau-shedule",
-  "version": "0.7.00",
+  "version": "0.7.01",
   "private": true,
   "scripts": {
     "dev": "next dev",
