@@ -33,8 +33,6 @@ const Week = () => {
 
     const [stateDay, setStateDay] = useState<any>(weekData.dayOfWeek)
     const [activeTranslate, setActiveTranslate] = useState<any>(-400)
-
-
     const [touchPosition, setTouchPosition] = useState<any>(null)
 // ...
 
@@ -54,12 +52,9 @@ const Week = () => {
         if (touchDown === null) {
             return
         }
-
-
         if (diff < -5) {
             next()
             console.log(activeTranslate)
-
         } else if (diff > 5) {
             prev()
             console.log(activeTranslate)

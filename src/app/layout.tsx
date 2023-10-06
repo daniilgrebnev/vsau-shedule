@@ -19,7 +19,7 @@ export default function RootLayout({
             <meta name="msapplication-navbutton-color" content="#212121"/>
             <meta name="apple-mobile-web-app-status-bar-style" content="#212121"/>
         </head>
-        <body className='flex  left-0 top-0 items-center justify-center bg-gray-dark'>
+        <body className='flex  left-0 top-0 items-center justify-center bg-bg-main'>
 
         {children}
 
