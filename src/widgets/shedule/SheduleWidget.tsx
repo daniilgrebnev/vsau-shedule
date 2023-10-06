@@ -23,8 +23,8 @@ const SheduleWidget = () => {
                 <div className="bg-black rounded-br-lg px-3 w-1/2 py-2">{weekData.day}</div>
             </div>
 
-            <div className="mt-12 text-center"><span
-                className='text-5xl py-10 font-semibold'>{groupName}{subGroup}</span></div>
+            <div className="my-12 text-center"><span
+                className='text-5xl font-semibold'>{groupName}{subGroup}</span></div>
             <div className='w-full  h-full flex items-center justify-center'>
                 <Week/>
             </div>
