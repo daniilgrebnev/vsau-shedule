@@ -20,11 +20,13 @@ const Settings = () => {
     return (
         <div className='w-[524px] h-[100dvh] relative bg-bg-main text-white overflow-hidden p-5'>
             <div className="">
-                <Link href='/'>
-                    <div
-                        className="px-0  py-2 w-1/3 text-white text-left font-semibold rounded-lg">&#8592; Назад
-                    </div>
-                </Link>
+
+                <div className="px-0  py-2 w-1/3 text-white text-left font-semibold rounded-lg">
+                    <Link href='/'>
+                        &#8592; Назад
+                    </Link>
+                </div>
+
                 <p className='mt-14 mb-4 text-center text-3xl'>Настройки</p>
                 <div className="mx-10">
                     <div className="">

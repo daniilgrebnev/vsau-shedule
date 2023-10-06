@@ -14,10 +14,10 @@ export default function RootLayout({
             <link rel="apple-touch-icon" href="/logo192.png"/>
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
             <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-            <meta name="theme-color" content="#000"/>
-            <meta name="msapplication-TileColor" content="#000"/>
-            <meta name="msapplication-navbutton-color" content="#000"/>
-            <meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
+            <meta name="theme-color" content="#212121"/>
+            <meta name="msapplication-TileColor" content="#212121"/>
+            <meta name="msapplication-navbutton-color" content="#212121"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="#212121"/>
         </head>
         <body className='flex  left-0 top-0 items-center justify-center bg-gray-dark'>
 
