@@ -5,6 +5,7 @@ import SearchIcon from "@/entities/icons/SearchIcon";
 import {searchHandler} from "@/store/slices/searchSlice";
 import SheduleWidget from "@/widgets/shedule/SheduleWidget";
 
+
 const SheduleMainWidget = () => {
     const dispatch = useAppDispatch()
     const groups = useAppSelector(state => state.sheduleReducer.initialState.list)
@@ -30,7 +31,7 @@ const SheduleMainWidget = () => {
                     </div>
                 </div>
                 :
-                <div className='h-[90dvh]'>
+                <div className='h-full'>
                     <SheduleWidget/>
                 </div>
 

@@ -16,7 +16,7 @@ const config: Config = {
             "cyan-dark": "0689e2",
             'azure': "#035a95",
             "black": '#000',
-            "ai": '#0073ff',
+            "ai": '#2888ff',
             "white": "#fff",
             'border-week-today': '#14FFEC',
             "border-week": "#084C4F",

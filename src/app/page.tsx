@@ -31,7 +31,7 @@ export default function Home() {
 
         <Provider store={store}>
             {domLoaded ?
-                <main className="w-[524px] h-[100dvh] relative bg-bg-main text-white overflow-hidden ">
+                <main className="w-[524px] h-[100dvh] relative bg-bg-main text-white overflow-x-hidden ">
                     <MainPage/>
                 </main> :
                 <div className='w-[524px] relative h-[100dvh] bg-bg-header flex items-center justify-center'>

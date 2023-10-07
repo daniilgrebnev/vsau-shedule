@@ -2,8 +2,8 @@
 import React, {useState} from 'react'
 import {closeSearch} from "@/store/slices/searchSlice";
 import {useAppDispatch} from "@/hooks";
-import {groupData} from "@/testArrays/test.data";
 import {getGroup} from "@/store/slices/sheduleCurrentSlice";
+import groupss from "@/testArrays/groups.json"
 
 const Search = () => {
 
@@ -12,7 +12,7 @@ const Search = () => {
     const [groupId, setGroupId] = useState<string>()
     const [subGroup, setSubGroup] = useState<string>()
 
-
+    const Groups = groupss
     const groupHandler = (id: string) => {
         setGroupId(id)
         setChangeGroup(true)
@@ -32,7 +32,7 @@ const Search = () => {
 
         }
     }
-    
+
 
     const [textInInput, setTextInInput] = useState('')
     return (
@@ -47,13 +47,13 @@ const Search = () => {
                            placeholder='Пример: ТЭ-2-5'
                            className='focus-within:outline-0 w-full  py-2 px-3 focus-within: focus-within:border-b-2   bg-black focus:outline-0 focus-within:border-0 bg-opacity-0 text-inherit'/>
                 </div>
-                <div className="w-11/12 mx-auto mt-10">
+                <div className="w-11/12 mx-auto mt-10 h-[60dvh] overflow-y-auto">
 
                     {
                         textInInput !== '' ?
-                            groupData.map(item => (
+                            Groups.map(item => (
                                 <div key={item.id} onClick={() => groupHandler(item.id.toString())}
-                                     className=" bg-opacity-100 cursor-pointer rounded-lg mb-4 border-b border-ai bg-bg-header w-full p-4 text-xl">
+                                     className="cursor-pointer rounded-lg mb-4 border-b border-ai bg-bg-header w-full p-4 text-xl">
                                     {item.name}
                                 </div>
                             ))

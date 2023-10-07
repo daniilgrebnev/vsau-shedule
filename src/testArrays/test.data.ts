@@ -1,478 +1,289 @@
-export const groupData = [
+export const groupData =
+    [
+        {
+            "id": 155,
+            "name": "Эб2-2",
+            "faculty": 9,
+            "lessons": []
+
+        },
+        {
+            "id": 156,
+            "name": "Эб2-3",
+            "faculty": 9
+        },
+        {
+            "id": 157,
+            "name": "Эб2-4",
+            "faculty": 9
+        }
+    ]
+
+
+export const schedule = [
     {
-        id: 0,
-        name: 'Тэ2-5б',
-        sub_groups: [
+        "id": 155,
+        "lessons": [
             {
-                id: 0,
-                name: 'А',
-                week: [
+                "weekday": 1,
+                "numerator": [
                     {
-                        id: 0,
-                        name: 'even',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "Матем.(э)",
+                        "type": 2,
+                        "teacher": "Гриднева И.В.",
+                        "room": "366"
                     },
                     {
-                        id: 1,
-                        name: 'notEven',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Инфор,беэ-ть",
+                        "type": 3,
+                        "teacher": "Горюхина Е.Ю.",
+                        "room": "120"
                     },
+                    {
+                        "time_start": "13:55",
+                        "time_end": "15:25",
+                        "name": "ЭконОрганизац",
+                        "type": 3,
+                        "teacher": "Авдеев Е.В.",
+                        "room": "211б"
+                    }
+                ],
+                "denominator": [
+                    {
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "Статистика.",
+                        "type": 2,
+                        "teacher": "Измайлова Л..",
+                        "room": "222"
+                    },
+                    {
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Инфор,беэ-ть",
+                        "type": 3,
+                        "teacher": "Горюхина Е.Ю.",
+                        "room": "120"
+                    },
+                    {
+                        "time_start": "13:55",
+                        "time_end": "15:25",
+                        "name": "Матем.(э)",
+                        "type": 1,
+                        "teacher": "Попов А.Е.",
+                        "room": "314 м.к."
+                    }
                 ]
             },
             {
-                id: 1,
-                name: 'Б'
-            }
-
-        ]
-    },
-    {
-        id: 1,
-        name: 'Тэ2-5б',
-        sub_groups: [
-            {
-                id: 0,
-                name: 'А',
-                week: [
+                "weekday": 2,
+                "numerator": [
                     {
-                        id: 0,
-                        name: 'even',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "МетодЭконИсслед",
+                        "type": 3,
+                        "teacher": "Трунов М.С.",
+                        "room": "119"
                     },
                     {
-                        id: 1,
-                        name: 'notEven',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "ТеорГос и права",
+                        "type": 1,
+                        "teacher": "Филиппова Н.В.",
+                        "room": "371"
                     },
+                    {
+                        "time_start": "13:55",
+                        "time_end": "15:25",
+                        "name": "ЭконОрганизац",
+                        "type": 2,
+                        "teacher": "Авдеев Е.В.",
+                        "room": "239"
+                    },
+                    {
+                        "time_start": "8:00",
+                        "time_end": "9:30",
+                        "name": "ЭконОрганизац",
+                        "type": 3,
+                        "teacher": "Маркова А.Л.",
+                        "room": "242"
+                    }
+                ],
+                "denominator": [
+                    {
+                        "time_start": "8:00",
+                        "time_end": "9:30",
+                        "name": "Психология",
+                        "type": 1,
+                        "teacher": "Казьмина Е.Г.",
+                        "room": "366"
+                    },
+                    {
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "МетодЭконИсслед",
+                        "type": 3,
+                        "teacher": "Трунов М.С.",
+                        "room": "241"
+                    },
+                    {
+                        "time_start": "13:55",
+                        "time_end": "15:25",
+                        "name": "ЭконОрганизац",
+                        "type": 2,
+                        "teacher": "Авдеев Е.В.",
+                        "room": "239"
+                    }
                 ]
             },
             {
-                id: 1,
-                name: 'Б'
-            }
-
-        ]
-    },
-    {
-        id: 2,
-        name: 'Тэ1-5а',
-        sub_groups: [
-            {
-                id: 0,
-                name: 'А',
-                week: [
+                "weekday": 3,
+                "numerator": [
                     {
-                        id: 0,
-                        name: 'even',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "ТеорГос и права",
+                        "type": 2,
+                        "teacher": "Филиппова Н.В.",
+                        "room": "354"
                     },
                     {
-                        id: 1,
-                        name: 'notEven',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Инф.тех.проф.д.",
+                        "type": 3,
+                        "teacher": "Кусмагамбетов С.М.",
+                        "room": "120"
+                    }
+                ],
+                "denominator": [
+                    {
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "Психология",
+                        "type": 2,
+                        "teacher": "Казьмина Е.Г.",
+                        "room": "354"
                     },
+                    {
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "ЭконОрганизац",
+                        "type": 3,
+                        "teacher": "Авдеев Е.В.",
+                        "room": "210"
+                    }
                 ]
             },
             {
-                id: 1,
-                name: 'Б'
-            }
-
-        ]
-    },
-    {
-        id: 3,
-        name: 'Тэ1-5б',
-        sub_groups: [
-            {
-                id: 0,
-                name: 'А',
-                week: [
+                "weekday": 4,
+                "numerator": [
                     {
-                        id: 0,
-                        name: 'even',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "Матем.(э)",
+                        "type": 1,
+                        "teacher": "Попов А.Е.",
+                        "room": "117 м.к."
                     },
                     {
-                        id: 1,
-                        name: 'notEven',
-                        day: [{
-                            id: 0,
-                            name: 'Понедельник',
-                            lessons: [
-                                {
-                                    id: 0,
-                                    time: "8:00-9:30",
-                                    name: 'Электротехника',
-                                    type: 'Лаб',
-                                    teacher: 'Гребнев Д.А.',
-                                    room: '315мк'
-                                },
-                                {
-                                    id: 1,
-                                    time: "9:50-11:20",
-                                    name: 'Комп. Графика',
-                                    type: 'Сем',
-                                    teacher: 'Сорокина Е.А.',
-                                    room: '315мк'
-                                },
-
-                            ]
-                        },
-                            {
-                                id: 1,
-                                name: 'Вторник',
-                                lessons: [
-                                    {
-                                        id: 0,
-                                        time: "8:00-9:30",
-                                        name: 'Механика',
-                                        type: 'Лаб',
-                                        teacher: 'Кожевников А.Е.',
-                                        room: '212мк'
-                                    },
-                                    {
-                                        id: 1,
-                                        time: "9:50-11:20",
-                                        name: 'Комп. Графика',
-                                        type: 'Сем',
-                                        teacher: 'Кожевникова В.А.',
-                                        room: '209мод'
-                                    },
-
-                                ]
-                            }
-                        ]
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Инф.тех.проф.д.",
+                        "type": 3,
+                        "teacher": "Кусмагамбетов С.М.",
+                        "room": "120"
                     },
+                    {
+                        "time_start": "13:55",
+                        "time_end": "15:25",
+                        "name": "Инфор,беэ-ть",
+                        "type": 2,
+                        "teacher": "Горюхина Е.Ю.",
+                        "room": "353"
+                    }
+                ],
+                "denominator": [
+                    {
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "Матем.(э)",
+                        "type": 1,
+                        "teacher": "Попов А.Е.",
+                        "room": "117 м.к."
+                    },
+                    {
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Инф.тех.проф.д.",
+                        "type": 3,
+                        "teacher": "Кусмагамбетов С.М.",
+                        "room": "120"
+                    },
+                    {
+                        "time_start": "13:55",
+                        "time_end": "15:25",
+                        "name": "Инфор,беэ-ть",
+                        "type": 2,
+                        "teacher": "Горюхина Е.Ю.",
+                        "room": "353"
+                    }
                 ]
             },
             {
-                id: 1,
-                name: 'Б'
+                "weekday": 5,
+                "numerator": [
+                    {
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "МетодЭконИсслед",
+                        "type": 2,
+                        "teacher": "Кузнецова Е.Д.",
+                        "room": "251"
+                    },
+                    {
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Статистика.",
+                        "type": 3,
+                        "teacher": "Панин С..",
+                        "room": "371"
+                    }
+                ],
+                "denominator": [
+                    {
+                        "time_start": "9:50",
+                        "time_end": "11:20",
+                        "name": "Инф.тех.проф.д.",
+                        "type": 2,
+                        "teacher": "Горюхина Е.Ю.",
+                        "room": "251"
+                    },
+                    {
+                        "time_start": "11:40",
+                        "time_end": "13:10",
+                        "name": "Статистика.",
+                        "type": 3,
+                        "teacher": "Панин С..",
+                        "room": "371"
+                    },
+                    {
+                        "time_start": "8:00",
+                        "time_end": "9:30",
+                        "name": "ЭконОрганизац",
+                        "type": 3,
+                        "teacher": "Маркова А.Л.",
+                        "room": "241"
+                    }
+                ]
             }
-
         ]
     }
+
 ]
