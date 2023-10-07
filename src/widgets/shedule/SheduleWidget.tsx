@@ -10,9 +10,8 @@ const SheduleWidget = () => {
     const groups = useAppSelector(state => state.sheduleReducer.initialState.list)
 
     const currentArray = groups.length - 1
-    const groupId = groups[currentArray]?.groupId
-    const groupName = (groupData.find(item => item.id === Number(groupId)))?.name
-    const subGroup = (groupData.find(item => item.id === Number(groupId)))?.sub_groups[Number(groups[currentArray].subGroup)]?.name
+
+    const groupName = (groupData.find(item => item.id === Number(groups[currentArray].groupId)))?.name
 
 
     const weekData = weekInit
@@ -24,7 +23,7 @@ const SheduleWidget = () => {
             </div>
 
             <div className="my-12 text-center"><span
-                className='text-5xl font-semibold'>{groupName}{subGroup}</span></div>
+                className='text-5xl font-semibold'>{groupName}</span></div>
             <div className='w-full  h-full flex items-center justify-center'>
                 <Week/>
             </div>

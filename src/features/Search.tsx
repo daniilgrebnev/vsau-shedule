@@ -12,18 +12,6 @@ const Search = () => {
     const [groupId, setGroupId] = useState<string>()
     const [subGroup, setSubGroup] = useState<string>()
 
-    const sub_group_array = [
-        {
-            id: 0,
-            name: 'A'
-        },
-        {
-            id: 1,
-            name: 'Б'
-        },
-
-    ]
-
 
     const groupHandler = (id: string) => {
         setGroupId(id)
@@ -33,22 +21,18 @@ const Search = () => {
     }
 
 
-    if (subGroup != null) {
+    if (groupId != null) {
+        for (let i = 1; i <= 1; i++) {
 
-        if (groupId != null) {
-            for (let i = 1; i <= 1; i++) {
+            dispatch(closeSearch())
+            dispatch(getGroup({
+                groupId: groupId,
+            }))
+            break
 
-                dispatch(closeSearch())
-                dispatch(getGroup({
-                    groupId: groupId,
-                    subGroup: subGroup
-                }))
-                break
-
-            }
         }
     }
-
+    
 
     const [textInInput, setTextInInput] = useState('')
     return (
@@ -64,35 +48,7 @@ const Search = () => {
                            className='focus-within:outline-0 w-full  py-2 px-3 focus-within: focus-within:border-b-2   bg-black focus:outline-0 focus-within:border-0 bg-opacity-0 text-inherit'/>
                 </div>
                 <div className="w-11/12 mx-auto mt-10">
-                    {
-                        changeGroup ?
-                            <div
-                                className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-30 flex items-end justify-center">
-                                <div className="animation-sub-group ">
 
-                                    <h1 className='text-2xl my-10 left-0 text-center'>Выберете
-                                        подгруппу</h1>
-                                    <div className="flex items-center justify-between">
-
-                                        {
-                                            sub_group_array.map(item => (
-                                                <div
-                                                    key={item.id}
-                                                    onClick={() => setSubGroup(item.id.toString())}
-                                                    className='p-10 relative shadow-lg shadow-blue-600 overflow-hidden rounded-lg bg-white text-black text-opacity-70 text-center text-4xl font-semibold m-5 bg-opacity-90'
-                                                >
-
-                                                    {item.name}
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-
-
-                                </div>
-
-                            </div> : <></>
-                    }
                     {
                         textInInput !== '' ?
                             groupData.map(item => (

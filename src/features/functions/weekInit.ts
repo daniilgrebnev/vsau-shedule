@@ -5,7 +5,7 @@ const parity = (weekNum % 2 !== 0 ? 'Числитель' : 'Знаменател
 
 let weekday = moment().locale("ru").format('dddd')
 
-if (weekday === 'суббота' || weekday === 'воскресенье') {
+if (weekday === 'воскресенье') {
     weekday = 'понедельник'
 }
 

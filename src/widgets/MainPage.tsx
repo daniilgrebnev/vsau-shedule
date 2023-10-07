@@ -5,49 +5,50 @@ import Header from "@/widgets/Layout/Header";
 import SheduleMainWidget from "@/widgets/shedule/SheduleMainWidget";
 import {useAppDispatch} from "@/hooks";
 import {getGroup} from "@/store/slices/sheduleCurrentSlice";
-import weekNum from "@/features/functions/weekInit";
 
 const MainPage = () => {
     const dispatch = useAppDispatch()
 
-    const week = weekNum
-    const subGroup: any = localStorage.getItem("subGroup")
+
+    const groupId: any = localStorage.getItem("groupId")
     if (typeof window !== "undefined") {
 
-        if (subGroup !== null) {
+        if (groupId !== null) {
             const groupId: any = window.localStorage.getItem("groupId")
-            const subGroup: any = localStorage.getItem("subGroup")
+            console.log(groupId)
             dispatch(getGroup({
                 groupId: groupId,
-                subGroup: subGroup
             }))
             console.log("Get in local")
         } else {
             console.log('SET in local')
             localStorage.setItem("groupId", '-1')
-            localStorage.setItem("subGroup", '-1')
+
             const groupId: any = window.localStorage.getItem("groupId")
-            const subGroup: any = localStorage.getItem("subGroup")
+
             dispatch(getGroup({
                 groupId: groupId,
-                subGroup: subGroup
+
             }))
 
         }
-        return (
-
-            <div>
-                <div className="">
-                    <Header/>
-                </div>
-                <div className="">
-
-                </div>
-                <div className="z-10">
-                    <SheduleMainWidget/>
-                </div>
-            </div>
-        )
+    } else {
+        console.log(undefined)
     }
+    return (
+
+        <div>
+            <div className="">
+                <Header/>
+            </div>
+            <div className="">
+
+            </div>
+            <div className="z-10 h-full">
+                <SheduleMainWidget/>
+            </div>
+        </div>
+    )
+
 }
 export default MainPage

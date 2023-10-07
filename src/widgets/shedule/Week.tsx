@@ -28,6 +28,11 @@ const Week = () => {
             shortName: 'Пт',
             activeState: -400
         },
+        {
+            name: 'Суббота',
+            shortName: 'Сб',
+            activeState: -500
+        },
 
     ]
 
@@ -37,6 +42,7 @@ const Week = () => {
 // ...
 
     const activeItem = (name: string, translate: number) => {
+        console.log(name)
         setStateDay(name.toLowerCase())
         setActiveTranslate(Number(translate))
     }
@@ -54,11 +60,8 @@ const Week = () => {
         }
         if (diff < -5) {
             next()
-            console.log(activeTranslate)
         } else if (diff > 5) {
             prev()
-            console.log(activeTranslate)
-
         }
 
         setTouchPosition(null)
@@ -69,35 +72,32 @@ const Week = () => {
     const next = () => {
 
         const day = weekDays.find(item => item.activeState === activeTranslate + 100)
-        setStateDay(day ? day.name.toLowerCase() : 'пятница')
+        setStateDay(day ? day.name.toLowerCase() : weekDays[weekDays.length - 1].name.toLowerCase())
         setActiveTranslate(day ? day.activeState : -400)
-        console.log(day)
-        console.log(stateDay)
     }
     const prev = () => {
 
         const day = weekDays.find(item => item.activeState === activeTranslate - 100)
-        setStateDay(day ? day.name.toLowerCase() : 'понедельник')
+        setStateDay(day ? day.name.toLowerCase() : weekDays[0].name.toLowerCase())
         setActiveTranslate(day ? day.activeState : 0)
-
-        console.log(stateDay)
-
     }
     const styles = {
         transform: `translate(${activeTranslate}%, 0)`
     }
 
     return (
-        <div className='w-full  mx-auto flex justify-center items-center'>
+        <div className='w-full  flex flex-col h-[67dvh] relative justify-around'>
+            <div className="absolute w-5 h-5 bg-red-reset bottom-0"></div>
             <div className="">
                 <div className='flex  w-full justify-center items-center gap-x-1'>
                     {
                         weekDays.map((item) => (
-                            <div>
+                            <div className='z-50'>
 
                                 <div key={item.name}
-                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-border-week-today' : 'border-t-4 border-border-week'} shadow-lg bg-bg-header overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[130px]' : ' w-[50px]'} flex items-center justify-center ease-in-out  h-12 rounded-lg duration-300 transition-all`}
-                                     onClick={() => activeItem(item.name, item.activeState)}>
+                                     onClick={() => activeItem(item.name, item.activeState)}
+                                     className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-border-week-today' : 'border-t-4 border-border-week'} shadow-lg bg-bg-header overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[110px]' : ' w-[40px]'} text-sm flex items-center justify-center ease-in-out  h-12 rounded-lg duration-300 transition-all`}
+                                >
                                     {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 
                                 </div>
@@ -111,11 +111,11 @@ const Week = () => {
             </div>
 
             <div
-                className={`flex w-full h-[60%]  absolute bottom-0 left-0 overflow-hidden justify-between`}>
+                className={`flex w-full h-[100%]  relative bottom-0 left-0 overflow-hidden justify-between`}>
                 {
                     weekDays.map((item) => (
                         <div style={styles} onTouchMove={mouseMoveHandler} onTouchStart={mouseStartHandler}
-                             className='transition-all duration-300 ease-in-out '>
+                             className='transition-all duration-300 ease-in-out h-full'>
 
                             <div
 

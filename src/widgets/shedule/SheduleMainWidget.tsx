@@ -9,11 +9,11 @@ const SheduleMainWidget = () => {
     const dispatch = useAppDispatch()
     const groups = useAppSelector(state => state.sheduleReducer.initialState.list)
     const groupId = groups[groups.length - 1]?.groupId
-    const subGroup = groups[groups.length - 1]?.subGroup
+
 
     return (
         <div>{
-            groupId == "-1" && subGroup == "-1" ?
+            groupId == "-1" ?
                 <div
                     className='className="w-full p-4 h-[90dvh] font-semibold text-2xl flex items-center justify-center'>
                     <div className="">
@@ -30,7 +30,9 @@ const SheduleMainWidget = () => {
                     </div>
                 </div>
                 :
-                <SheduleWidget/>
+                <div className='h-[90dvh]'>
+                    <SheduleWidget/>
+                </div>
 
 
         }</div>

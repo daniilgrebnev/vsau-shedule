@@ -3,7 +3,7 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 type Group = {
     groupId: string,
-    subGroup: string
+
 }
 
 type GroupState = {
@@ -16,7 +16,7 @@ const initialState: GroupState = {
 
 interface IGroup {
     groupId: string,
-    subGroup: string
+
 }
 
 const sheduleCurrentSlice = createSlice({
@@ -28,10 +28,10 @@ const sheduleCurrentSlice = createSlice({
         getGroup(state, action: PayloadAction<IGroup>) {
             state.initialState.list.push({
                 groupId: action.payload.groupId,
-                subGroup: action.payload.subGroup
+
             })
             localStorage.setItem('groupId', action.payload.groupId)
-            localStorage.setItem('subGroup', action.payload.subGroup)
+
         }
     }
 })
