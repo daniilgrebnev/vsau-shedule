@@ -264,14 +264,6 @@
       {
         "weekday": 6,
         "numerator": [
-          {
-            "time_start": "8:00",
-            "time_end": "9:30",
-            "name": "ЭконОрганизац",
-            "type": 3,
-            "teacher": "Маркова А.Л.",
-            "room": "241"
-          }
         ],
         "denominator": []
       }
