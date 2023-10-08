@@ -100,7 +100,7 @@ const Week = () => {
     }
 
     return (
-        <div className='w-full h-[60vh] relative '>
+        <div className='w-full p-0 h-[60vh] relative '>
             {/*<div className="w-10 h-10 bg-red-reset absolute bottom-0 "></div>*/}
 
             <div className='flex  w-full justify-center items-center gap-x-1'>
@@ -113,19 +113,14 @@ const Week = () => {
                                  className={`  ${item.name.toLowerCase() === weekData.dayOfWeek ? 'border-t-4 border-border-week-today' : 'border-t-4 border-border-week'} shadow-lg bg-bg-header overflow-hidden text-center ${item.name.toLowerCase() == stateDay ? 'w-[110px]' : ' w-[40px]'} text-sm flex items-center justify-center ease-in-out  h-12 rounded-lg duration-300 transition-all`}
                             >
                                 {item.name.toLowerCase() == stateDay ? item.name : item.shortName}
-
                             </div>
-
-
                         </div>
                     ))
                 }
 
-
             </div>
-
             <div
-                className={`flex w-[102%] mt-5 gap-x-0.5 py-2 h-[450px] overflow-y-scroll items-center   overflow-x-hidden relative `}>
+                className={`flex w-[100%] mt-5 gap-x-0 py-2 h-[450px] overflow-y-scroll items-center   overflow-x-hidden relative `}>
                 {
                     weekDays.map((item) => (
                         <div key={item.name} style={styles} onTouchMove={mouseMoveHandler}
@@ -133,7 +128,6 @@ const Week = () => {
                              className='transition-all duration-300 ease-in-out h-full w-full'>
 
                             <div
-
                                 className={`transition-all flex items-start justify-start ease-in-out  h-full relative  bottom-0  w-screen overflow-x-hidden`}
                             >
 

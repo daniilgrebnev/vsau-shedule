@@ -17,8 +17,8 @@ const SheduleWidget = () => {
 
     const weekData = weekInit
     return (
-        <div className='px-2 py-1 h-full'>
-            <div className="flex items-start mx-2 gap-1 text-center justify-between font-semibold text">
+        <div className=' h-full'>
+            <div className="flex items-start mx-2 mt-1 gap-1 text-center justify-between font-semibold text">
                 <div
                     className="bg-bg-header rounded-bl-lg border-b-2 border-b-border-week px-3 w-1/2 py-2">{weekData.parity}</div>
                 <div
