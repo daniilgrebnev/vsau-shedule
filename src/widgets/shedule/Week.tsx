@@ -170,7 +170,7 @@ const Week = () => {
 						className='transition-all duration-300 ease-in-out h-full w-full'
 					>
 						<div
-							className={`transition-all flex items-start justify-start ease-in-out  h-[80%] relative  bottom-0  w-screen overflow-x-hidden`}
+							className={`transition-all flex items-start justify-start ease-in-out  h-[95%] relative  bottom-0  w-screen overflow-x-hidden`}
 						>
 							<Lessons day={stateDay} id={item.weekday} {...schedule} />
 						</div>
