@@ -3,15 +3,33 @@ import {useAppSelector} from "@/hooks";
 import anything from "@/testArrays/schedule.json"
 
 const Lessons = ({day, id}: any) => {
+    const types = [
+        {
+            type: 1,
+            color: '#c919ff',
+            name: 'Сем'
+        },
+        {
+            type: 2,
+            color: '#ff2968',
+            name: 'Лекц'
+        },
+        {
+            type: 3,
+            color: '#bd1a7a',
+            name: 'Лаб'
+        },
+
+    ]
     const Schedule = anything
-    console.log(id)
+
     const getGroups = useAppSelector(state => state.sheduleReducer.initialState.list)
 
     const groupId = Number(getGroups[getGroups.length - 1].groupId)
 
     const currentShedule = Schedule.find(item => item.id === groupId)
 
-    console.log(currentShedule?.lessons[5].numerator)
+    // const currentColor = types.find()
 
     return (
 
@@ -28,8 +46,10 @@ const Lessons = ({day, id}: any) => {
                             <div className="">{item.name}</div>
                             <div className="mx-3 px-2 py-1 bg-bg-main rounded-lg">{item.room}</div>
                         </div>
-                        <div
-                            className="absolute top-1 right-1 flex items-center justify-center bg-border-week w-14 h-6 rounded-lg">{item.type}</div>
+                        <div style={{background: `${types.find(i => i.type === item.type)?.color}`}}
+                             className={`absolute text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}>
+                            {types.find(i => i.type === item.type)?.name}
+                        </div>
                         <div className="mt-2">{item.teacher}</div>
                     </div>
                 </div>
