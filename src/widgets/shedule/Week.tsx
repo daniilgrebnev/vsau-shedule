@@ -1,11 +1,11 @@
 import { lessonTypes } from '@/entities/weekData/lessonTypes'
 import weekData from '@/features/functions/weekInit'
-import { useAppSelector } from '@/hooks'
-import anything from '@/testArrays/schedule.json'
+// import anything from '@/testArrays/schedule.json'
 import Lessons from '@/widgets/shedule/lessons/Lessons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Week = () => {
+	const [scheduleData, setScheduleData] = useState<ISchedule>()
 	const weekDays = [
 		{
 			weekday: 1,
@@ -44,25 +44,31 @@ const Week = () => {
 			activeState: -500,
 		},
 	]
+
+	useEffect(() => {
+		fetch('https://mocki.io/v1/f4d05396-ac9f-45d6-8e31-858c473dcebd').then(
+			res =>
+				res
+					.clone()
+					.json()
+					.then(data => setScheduleData(data[0]))
+					.catch(err => {
+						console.log(err)
+					})
+		)
+	}, [])
 	const types = lessonTypes
-	const Schedule = anything
 
-	const getGroups = useAppSelector(
-		state => state.sheduleReducer.initialState.list
-	)
-
-	const groupId = Number(getGroups[getGroups.length - 1].groupId)
-
-	const currentShedule = Schedule.find(item => item.id === groupId)
+	console.log(scheduleData)
 
 	const todayTranslate = weekDays.find(
 		item => item.name.toLowerCase() == weekData.dayOfWeek
 	)?.activeState
 
+	// ...
 	const [stateDay, setStateDay] = useState<any>(weekData.dayOfWeek)
 	const [activeTranslate, setActiveTranslate] = useState<any>(todayTranslate)
 	const [touchPosition, setTouchPosition] = useState<any>(null)
-	// ...
 
 	const activeItem = (name: string, translate: number) => {
 		console.log(name)
@@ -116,17 +122,7 @@ const Week = () => {
 	const styles = {
 		transform: `translate(${activeTranslate}%, 0)`,
 	}
-
-	const currentDayID: any = weekDays.find(
-		i => i.name.toLowerCase() == stateDay
-	)?.weekday
-	// const a: any[] | undefined = currentShedule?.lessons[currentDayID - 1].numerator.map(i => (
-	//     types.find(item => item.type === i.type)
-	// ))
-
-	const typeses = currentShedule?.lessons.map(i => i.numerator)
-	const a = typeses?.map(i => i)
-	console.log(a)
+	const typeses = scheduleData?.lessons.map(i => i.numerator)
 	return (
 		<div className='w-full p-0 h-[60vh] relative '>
 			{/*<div className="w-10 h-10 bg-red-reset absolute bottom-0 "></div>*/}
@@ -148,7 +144,7 @@ const Week = () => {
 							{item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 						</div>
 						<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
-							{currentShedule?.lessons[item.weekday - 1].numerator?.map(i => (
+							{scheduleData?.lessons[item.weekday - 1].denominator?.map(i => (
 								<div
 									style={{
 										background: types.find(color => color.type === i.type)
@@ -177,9 +173,8 @@ const Week = () => {
 						>
 							<Lessons
 								day={stateDay}
-								id={item.weekday}
-								{...Schedule}
-								{...types}
+								weekday={item.weekday}
+								scheduleData={scheduleData}
 							/>
 						</div>
 					</div>

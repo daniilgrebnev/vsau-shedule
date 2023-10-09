@@ -1,25 +1,40 @@
 import { lessonTypes } from '@/entities/weekData/lessonTypes'
-import { useAppSelector } from '@/hooks'
-import anything from '@/testArrays/schedule.json'
+import { useEffect, useState } from 'react'
 
-const Lessons = ({ id }: any) => {
+interface ILessons {
+	weekday: number
+	numerator: any[]
+	denominator: any[]
+}
+interface ISchedule {
+	id: number
+	lessons: ILessons[]
+}
+
+const Lessons = ({ weekday }: any, { id, lessons }: ISchedule) => {
+	const [scheduleData, setScheduleData] = useState<ISchedule>()
+	useEffect(() => {
+		fetch('https://mocki.io/v1/f4d05396-ac9f-45d6-8e31-858c473dcebd').then(
+			res =>
+				res
+					.clone()
+					.json()
+					.then(data => setScheduleData(data[0]))
+					.catch(err => {
+						console.log(err)
+					})
+		)
+	}, [])
+
+	console.log(scheduleData)
 	const types = lessonTypes
-	const Schedule = anything
-
-	const getGroups = useAppSelector(
-		state => state.sheduleReducer.initialState.list
-	)
-
-	const groupId = Number(getGroups[getGroups.length - 1].groupId)
-
-	const currentShedule = Schedule.find(item => item.id === groupId)
 
 	// const currentColor = types.find()
 
 	return (
 		<div className=' flex flex-col w-full h-[100%]   gap-y-2'>
-			{currentShedule?.lessons[id - 1]?.numerator.length !== 0 ? (
-				currentShedule?.lessons[id - 1]?.numerator.map(item => (
+			{scheduleData?.lessons[weekday - 1]?.denominator.length !== 0 ? (
+				scheduleData?.lessons[weekday - 1]?.denominator.map(item => (
 					<div>
 						<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
 							<div className=' w-full text-left text-sm '>
