@@ -147,14 +147,14 @@ const Week = () => {
 						>
 							{item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 						</div>
-						<div className='absolute bottom-0.5 w-full left-0 gap-x-0.5 flex items-center justify-center'>
+						<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
 							{Schedule[0].lessons[item.weekday - 1].numerator?.map(i => (
 								<div
 									style={{
 										background: types.find(color => color.type === i.type)
 											?.color,
 									}}
-									className={`w-[7px] h-[5px] rounded-full `}
+									className={`w-full h-[4px] rounded-lg `}
 								></div>
 							))}
 						</div>

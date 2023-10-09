@@ -1,7 +1,7 @@
 export const lessonTypes = [
 	{
 		type: 1,
-		color: '#DD29FF',
+		color: '#855B8D',
 		name: 'Сем',
 	},
 	{
@@ -11,7 +11,7 @@ export const lessonTypes = [
 	},
 	{
 		type: 3,
-		color: '#0FC8FF',
+		color: '#0a8cb2',
 		name: 'Лаб',
 	},
 ]
