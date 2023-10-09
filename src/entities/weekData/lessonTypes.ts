@@ -1,12 +1,12 @@
 export const lessonTypes = [
 	{
 		type: 1,
-		color: '#855B8D',
+		color: '#7c3a89',
 		name: 'Сем',
 	},
 	{
 		type: 2,
-		color: '#ff2968',
+		color: '#cc2053',
 		name: 'Лекц',
 	},
 	{
