@@ -45,7 +45,6 @@ const Week = () => {
 		},
 	]
 	const types = lessonTypes
-
 	const Schedule = anything
 
 	const getGroups = useAppSelector(
@@ -55,6 +54,7 @@ const Week = () => {
 	const groupId = Number(getGroups[getGroups.length - 1].groupId)
 
 	const currentShedule = Schedule.find(item => item.id === groupId)
+
 	const todayTranslate = weekDays.find(
 		item => item.name.toLowerCase() == weekData.dayOfWeek
 	)?.activeState
@@ -148,7 +148,7 @@ const Week = () => {
 							{item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 						</div>
 						<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
-							{Schedule[0].lessons[item.weekday - 1].numerator?.map(i => (
+							{currentShedule?.lessons[item.weekday - 1].numerator?.map(i => (
 								<div
 									style={{
 										background: types.find(color => color.type === i.type)
