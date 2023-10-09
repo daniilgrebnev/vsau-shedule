@@ -1,24 +1,9 @@
+import { lessonTypes } from '@/entities/weekData/lessonTypes'
 import { useAppSelector } from '@/hooks'
 import anything from '@/testArrays/schedule.json'
 
-const Lessons = ({ day, id }: any) => {
-	const types = [
-		{
-			type: 1,
-			color: '#c919ff',
-			name: 'Сем',
-		},
-		{
-			type: 2,
-			color: '#ff2968',
-			name: 'Лекц',
-		},
-		{
-			type: 3,
-			color: '#bd1a7a',
-			name: 'Лаб',
-		},
-	]
+const Lessons = ({ id }: any) => {
+	const types = lessonTypes
 	const Schedule = anything
 
 	const getGroups = useAppSelector(
@@ -55,7 +40,7 @@ const Lessons = ({ day, id }: any) => {
 											types.find(i => i.type === item.type)?.color
 										}`,
 									}}
-									className={`absolute text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}
+									className={`absolute  font-semibold text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}
 								>
 									{types.find(i => i.type === item.type)?.name}
 								</div>
