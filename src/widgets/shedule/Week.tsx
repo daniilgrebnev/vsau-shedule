@@ -43,8 +43,24 @@ const Week = () => {
 			activeState: -500,
 		},
 	]
+	const types = [
+		{
+			type: 1,
+			color: '#c919ff',
+			name: 'Сем',
+		},
+		{
+			type: 2,
+			color: '#ff2968',
+			name: 'Лекц',
+		},
+		{
+			type: 3,
+			color: '#bd1a7a',
+			name: 'Лаб',
+		},
+	]
 
-	const schedule = anything
 	const Schedule = anything
 
 	const getGroups = useAppSelector(
@@ -146,14 +162,16 @@ const Week = () => {
 						>
 							{item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 						</div>
-						<div className='absolute bottom-0 w-full left-0 flex items-center justify-between'>
-							{
-								// a?.map(item => (
-								//     <div className={`w-full bg-${item.color} z-20 h-1 `}>
-								//         <div className=""></div>
-								//     </div>
-								// ))
-							}
+						<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-between'>
+							{Schedule[0].lessons[item.weekday - 1].numerator?.map(i => (
+								<div
+									style={{
+										background: types.find(color => color.type === i.type)
+											?.color,
+									}}
+									className={`w-full h-1 `}
+								></div>
+							))}
 						</div>
 					</div>
 				))}
@@ -170,9 +188,9 @@ const Week = () => {
 						className='transition-all duration-300 ease-in-out h-full w-full'
 					>
 						<div
-							className={`transition-all flex items-start justify-start ease-in-out  h-[95%] relative  bottom-0  w-screen overflow-x-hidden`}
+							className={`transition-all flex items-start justify-start ease-in-out  h-[95%] relative  bottom-0 max-w-[520px] w-[100dvw] overflow-x-hidden`}
 						>
-							<Lessons day={stateDay} id={item.weekday} {...schedule} />
+							<Lessons day={stateDay} id={item.weekday} {...Schedule} />
 						</div>
 					</div>
 				))}
