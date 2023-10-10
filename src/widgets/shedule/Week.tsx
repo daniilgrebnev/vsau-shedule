@@ -4,8 +4,14 @@ import weekData from '@/features/functions/weekInit'
 import Lessons from '@/widgets/shedule/lessons/Lessons'
 import { useEffect, useState } from 'react'
 
-const Week = () => {
+interface IParity {
+	numerator?: string
+	denominator?: string
+}
+
+const Week = (activeParity: any) => {
 	const [scheduleData, setScheduleData] = useState<ISchedule>()
+	const [parity] = useState(activeParity.activeParity)
 	const weekDays = [
 		{
 			weekday: 1,
@@ -45,6 +51,8 @@ const Week = () => {
 		},
 	]
 
+	console.log('PARITY', parity)
+
 	useEffect(() => {
 		fetch('https://mocki.io/v1/f4d05396-ac9f-45d6-8e31-858c473dcebd').then(
 			res =>
@@ -58,8 +66,6 @@ const Week = () => {
 		)
 	}, [])
 	const types = lessonTypes
-
-	console.log(scheduleData)
 
 	const todayTranslate = weekDays.find(
 		item => item.name.toLowerCase() == weekData.dayOfWeek
@@ -110,19 +116,18 @@ const Week = () => {
 		)
 		setActiveTranslate(day ? day.activeState : -500)
 	}
-	console.log(stateDay)
+
 	const prev = () => {
 		const day = weekDays.find(
 			item => item.activeState === activeTranslate - 100
 		)
 		setStateDay(day ? day.name.toLowerCase() : weekDays[0].name.toLowerCase())
 		setActiveTranslate(day ? day.activeState : 0)
-		console.log(stateDay)
 	}
 	const styles = {
 		transform: `translate(${activeTranslate}%, 0)`,
 	}
-	const typeses = scheduleData?.lessons.map(i => i.numerator)
+
 	return (
 		<div className='w-full p-0 h-[60vh] relative '>
 			{/*<div className="w-10 h-10 bg-red-reset absolute bottom-0 "></div>*/}
@@ -143,17 +148,31 @@ const Week = () => {
 						>
 							{item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 						</div>
-						<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
-							{scheduleData?.lessons[item.weekday - 1].denominator?.map(i => (
-								<div
-									style={{
-										background: types.find(color => color.type === i.type)
-											?.color,
-									}}
-									className={`w-full h-[4px] rounded-lg `}
-								></div>
-							))}
-						</div>
+						{parity == 'numerator' ? (
+							<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
+								{scheduleData?.lessons[item.weekday - 1].numerator?.map(i => (
+									<div
+										style={{
+											background: types.find(color => color.type === i.type)
+												?.color,
+										}}
+										className={`w-full h-[4px] rounded-lg `}
+									></div>
+								))}
+							</div>
+						) : (
+							<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
+								{scheduleData?.lessons[item.weekday - 1].denominator?.map(i => (
+									<div
+										style={{
+											background: types.find(color => color.type === i.type)
+												?.color,
+										}}
+										className={`w-full h-[4px] rounded-lg `}
+									></div>
+								))}
+							</div>
+						)}
 					</div>
 				))}
 			</div>
@@ -172,8 +191,8 @@ const Week = () => {
 							className={`transition-all flex items-start justify-start ease-in-out  h-[95%] relative  bottom-0 max-w-[520px] w-[100dvw] overflow-x-hidden`}
 						>
 							<Lessons
-								day={stateDay}
 								weekday={item.weekday}
+								parity={parity}
 								scheduleData={scheduleData}
 							/>
 						</div>

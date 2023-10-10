@@ -1,22 +1,22 @@
-import moment from "moment";
+import moment from 'moment'
 
 const weekNum = Number(moment().format('w'))
-const parity = (weekNum % 2 !== 0 ? 'Числитель' : 'Знаменатель')
+const parityRu = weekNum % 2 !== 0 ? 'Числитель' : 'Знаменатель'
+const parityEng = weekNum % 2 !== 0 ? 'numerator' : 'denominator'
 
-let weekday = moment().locale("ru").format('dddd')
+let dayOfWeek = moment().locale('ru').format('dddd')
 
-if (weekday === 'воскресенье') {
-    weekday = 'понедельник'
+if (dayOfWeek === 'воскресенье') {
+	dayOfWeek = 'понедельник'
 }
 
 const day = moment().format('ll')
 
-
 const weekData = {
-    parity: parity,
-    dayOfWeek: weekday,
-    day: day,
-
+	parityEng,
+	parityRu,
+	dayOfWeek,
+	day,
 }
 
 export default weekData
