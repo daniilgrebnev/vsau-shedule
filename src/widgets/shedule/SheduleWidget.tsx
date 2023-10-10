@@ -62,7 +62,7 @@ const SheduleWidget = () => {
 					</div>
 				</div>
 			</div>
-			<div className='w-full  h-full flex items-center justify-center'>
+			<div className='w-full transition-all h-full flex items-center justify-center'>
 				<WeekCarousel />
 			</div>
 		</div>

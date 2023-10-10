@@ -149,7 +149,7 @@ const Week = (activeParity: any) => {
 							{item.name.toLowerCase() == stateDay ? item.name : item.shortName}
 						</div>
 						{parity == 'numerator' ? (
-							<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
+							<div className=' transition-all absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
 								{scheduleData?.lessons[item.weekday - 1].numerator?.map(i => (
 									<div
 										style={{
@@ -161,7 +161,7 @@ const Week = (activeParity: any) => {
 								))}
 							</div>
 						) : (
-							<div className='absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
+							<div className='transition-all absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
 								{scheduleData?.lessons[item.weekday - 1].denominator?.map(i => (
 									<div
 										style={{

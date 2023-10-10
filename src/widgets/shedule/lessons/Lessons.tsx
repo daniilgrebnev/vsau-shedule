@@ -28,7 +28,7 @@ const Lessons = ({ weekday, parity }: any) => {
 		)
 	}, [])
 
-	console.log(scheduleData)
+	console.log(scheduleData && 'loading')
 	const types = lessonTypes
 
 	// const currentColor = types.find()
@@ -36,10 +36,47 @@ const Lessons = ({ weekday, parity }: any) => {
 	return (
 		<div className='w-full'>
 			<div className='flex flex-col w-full h-[100%]   gap-y-2'>
-				{parity == 'numerator' ? (
-					scheduleData?.lessons[weekday - 1]?.numerator.length !== 0 ? (
-						scheduleData?.lessons[weekday - 1]?.numerator.map(item => (
-							<div>
+				{scheduleData ? (
+					parity == 'numerator' ? (
+						scheduleData?.lessons[weekday - 1]?.numerator.length !== 0 ? (
+							scheduleData?.lessons[weekday - 1]?.numerator.map(item => (
+								<div className='transition-all'>
+									<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
+										<div className=' w-full text-left text-sm '>
+											<div className=''>
+												{item.time_start} - {item.time_end}
+											</div>
+										</div>
+										<div className=''>
+											<div className='mt-5 flex items-center w-full justify-start'>
+												<div className=''>{item.name}</div>
+												<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
+													{item.room}
+												</div>
+											</div>
+											<div
+												style={{
+													background: `${
+														types.find(i => i.type === item.type)?.color
+													}`,
+												}}
+												className={`absolute  font-semibold text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}
+											>
+												{types.find(i => i.type === item.type)?.name}
+											</div>
+											<div className='mt-2'>{item.teacher}</div>
+										</div>
+									</div>
+								</div>
+							))
+						) : (
+							<div className='w-full h-full justify-center items-center text-center text-3xl'>
+								Нет пар
+							</div>
+						)
+					) : scheduleData?.lessons[weekday - 1]?.denominator.length !== 0 ? (
+						scheduleData?.lessons[weekday - 1]?.denominator.map(item => (
+							<div className='transition-all'>
 								<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
 									<div className=' w-full text-left text-sm '>
 										<div className=''>
@@ -73,40 +110,14 @@ const Lessons = ({ weekday, parity }: any) => {
 							Нет пар
 						</div>
 					)
-				) : scheduleData?.lessons[weekday - 1]?.denominator.length !== 0 ? (
-					scheduleData?.lessons[weekday - 1]?.denominator.map(item => (
-						<div>
-							<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
-								<div className=' w-full text-left text-sm '>
-									<div className=''>
-										{item.time_start} - {item.time_end}
-									</div>
-								</div>
-								<div className=''>
-									<div className='mt-5 flex items-center w-full justify-start'>
-										<div className=''>{item.name}</div>
-										<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
-											{item.room}
-										</div>
-									</div>
-									<div
-										style={{
-											background: `${
-												types.find(i => i.type === item.type)?.color
-											}`,
-										}}
-										className={`absolute  font-semibold text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}
-									>
-										{types.find(i => i.type === item.type)?.name}
-									</div>
-									<div className='mt-2'>{item.teacher}</div>
-								</div>
-							</div>
-						</div>
-					))
 				) : (
-					<div className='w-full h-full justify-center items-center text-center text-3xl'>
-						Нет пар
+					<div className=''>
+						<div className='w-[90%] mx-auto mb-3 h-32 rounded-lg bg-bg-header animation-skeleton'>
+							<div className='animation-skeleton-line'></div>
+						</div>
+						<div className='w-[90%] mx-auto h-32 rounded-lg bg-bg-header animation-skeleton'>
+							<div className='animation-skeleton-line  bg-light-blue'></div>
+						</div>
 					</div>
 				)}
 			</div>

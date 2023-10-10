@@ -4,70 +4,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap');
 
 *::-webkit-scrollbar {
-  width: 0;
+	width: 0;
 }
 
 html {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
 }
 
 body {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  /* Non-prefixed version, currently
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	/* Non-prefixed version, currently
                                    supported by Chrome, Edge, Opera and Firefox */
 }
 
 body {
-  font-family: 'Overpass', sans-serif;
+	font-family: 'Overpass', sans-serif;
 }
 
 input {
-  border: 0;
-  outline: 0;
+	border: 0;
+	outline: 0;
 
-  &:focus {
-    border: 0;
-    outline: 0;
-  }
+	&:focus {
+		border: 0;
+		outline: 0;
+	}
 
-  &:focus-visible {
-    border: 0;
-    outline: 0;
-  }
+	&:focus-visible {
+		border: 0;
+		outline: 0;
+	}
 
-  &:focus-within {
-    border: 0;
-    outline: 0;
-  }
+	&:focus-within {
+		border: 0;
+		outline: 0;
+	}
 }
 
 .animation-sub-group {
-  padding: 40px;
-  height: 400px;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.30);
-  position: relative;
-  animation: subGroup .3s ease-in-out;
-  border-radius: 16px;
-  transition: all .3s ease;
+	padding: 40px;
+	height: 400px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	position: relative;
+	animation: subGroup 0.3s ease-in-out;
+	border-radius: 16px;
+	transition: all 0.3s ease;
 }
 
 @keyframes subGroup {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 0;
-  }
+	0% {
+		bottom: -100%;
+	}
+	100% {
+		bottom: 0;
+	}
+}
+.animation-skeleton {
+	position: relative;
+	overflow: hidden;
+	.animation-skeleton-line {
+		position: absolute;
+		height: 150%;
+		width: 0px;
+		box-shadow: 10px 20px 100px 20px;
+		top: -50%;
+
+		background: #ffffff;
+		transform: rotate(-45deg);
+		transition: all 0.2s ease;
+		animation: Skeleton 0.8s ease-in-out alternate infinite;
+	}
+}
+
+@keyframes Skeleton {
+	from {
+		left: -20%;
+	}
+
+	to {
+		left: 100%;
+	}
 }
