@@ -10,7 +10,7 @@ if (dayOfWeek === 'воскресенье') {
 	dayOfWeek = 'понедельник'
 }
 
-const day = moment().format('ll')
+const day = moment().format('LL')
 
 const weekData = {
 	parityEng,
