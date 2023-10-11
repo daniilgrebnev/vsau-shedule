@@ -51,18 +51,21 @@ const Week = (activeParity: any) => {
 		},
 	]
 
-	console.log('PARITY', parity)
-
 	useEffect(() => {
 		fetch('https://mocki.io/v1/f4d05396-ac9f-45d6-8e31-858c473dcebd').then(
-			res =>
-				res
-					.clone()
-					.json()
-					.then(data => setScheduleData(data[0]))
-					.catch(err => {
-						console.log(err)
-					})
+			res => {
+				if (res.ok) {
+					res
+						.clone()
+						.json()
+						.then(data => setScheduleData(data[0]))
+						.catch(() => {
+							console.log('err')
+						})
+				} else {
+					console.log('fetch error')
+				}
+			}
 		)
 	}, [])
 	const types = lessonTypes
@@ -127,6 +130,8 @@ const Week = (activeParity: any) => {
 	const styles = {
 		transform: `translate(${activeTranslate}%, 0)`,
 	}
+	const a = weekDays.find(i => i.name === stateDay)
+	console.log(a)
 
 	return (
 		<div className='w-full p-0 h-[60vh] relative '>
@@ -194,6 +199,7 @@ const Week = (activeParity: any) => {
 								weekday={item.weekday}
 								parity={parity}
 								scheduleData={scheduleData}
+								stateDay={stateDay}
 							/>
 						</div>
 					</div>
