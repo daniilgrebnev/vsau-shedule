@@ -105,14 +105,13 @@ input {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	/*   border:1px solid red; */
 	height: 100%;
 	align-items: center;
 }
 
 .svg-anim {
 	display: block;
-	font: 5.5em 'Montserrat';
+	font: 20.5em 'Montserrat';
 	width: 700px;
 	height: 300px;
 	margin: 0 auto;
@@ -121,36 +120,37 @@ input {
 .text-copy {
 	letter-spacing: 7px;
 	fill: none;
+	font-weight: 900;
 	stroke: white;
-	stroke-dasharray: 6% 29%;
-	stroke-width: 3px;
+	stroke-dasharray: 10% 19%;
+	stroke-width: 4px;
 	stroke-dashoffset: 0%;
-	animation: stroke-offset 5.5s infinite linear;
+	animation: stroke-offset 3s infinite linear;
 }
 
 .text-copy:nth-child(1) {
-	stroke: #cc2053;
-	animation-delay: -1;
+	stroke: #0f585c;
+	animation-delay: -0.25s;
 }
 
 .text-copy:nth-child(2) {
-	stroke: #7c3a89;
-	animation-delay: -2s;
+	stroke: #224852;
+	animation-delay: -0.5s;
 }
 
 .text-copy:nth-child(3) {
-	stroke: #0a8cb2;
-	animation-delay: -3s;
+	stroke: #0ab2af;
+	animation-delay: -1s;
 }
 
 .text-copy:nth-child(4) {
-	stroke: #084c4f;
-	animation-delay: -4s;
+	stroke: #0e7787;
+	animation-delay: -1.25s;
 }
 
 .text-copy:nth-child(5) {
-	stroke: #14ffec;
-	animation-delay: -5s;
+	stroke: #08645d;
+	animation-delay: -1.5s;
 }
 
 @keyframes stroke-offset {

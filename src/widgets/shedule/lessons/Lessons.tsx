@@ -135,7 +135,7 @@ const Lessons = ({ weekday, parity, stateDay }: any) => {
 					)}
 				</div>
 			) : (
-				<div className='w-full h-[30dvh] flex items-center justify-center'>
+				<div className='w-full h-[60dvh] flex items-center justify-center'>
 					<WaitTextAnimate />
 				</div>
 			)}
