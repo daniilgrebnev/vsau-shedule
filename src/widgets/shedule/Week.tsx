@@ -98,9 +98,9 @@ const Week = (activeParity: any) => {
 		if (touchDown === null) {
 			return
 		}
-		if (diff < -5) {
+		if (diff < -10) {
 			next()
-		} else if (diff > 5) {
+		} else if (diff > 10) {
 			prev()
 		}
 
