@@ -5,7 +5,7 @@ const WaitTextAnimate = () => {
 				<svg className='svg-anim' viewBox='0 0 960 300'>
 					<symbol id='s-text'>
 						<text className='' text-anchor='middle' x='50%' y='80%'>
-							&#9675;
+							Загрузка
 						</text>
 					</symbol>
 

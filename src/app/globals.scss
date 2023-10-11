@@ -111,7 +111,7 @@ input {
 
 .svg-anim {
 	display: block;
-	font: 20.5em 'Montserrat';
+	font: 5.5em 'Montserrat';
 	width: 700px;
 	height: 300px;
 	margin: 0 auto;
@@ -123,7 +123,7 @@ input {
 	font-weight: 900;
 	stroke: white;
 	stroke-dasharray: 10% 19%;
-	stroke-width: 4px;
+	stroke-width: 2px;
 	stroke-dashoffset: 0%;
 	animation: stroke-offset 3s infinite linear;
 }
