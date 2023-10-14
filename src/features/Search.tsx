@@ -70,7 +70,6 @@ const Search = () => {
 					/>
 				</div>
 				<div className='w-11/12 mx-auto mt-10 h-[60dvh] overflow-y-auto'>
-					{textInInput}
 					{textInInput.length > 1 ? (
 						group?.map(item => (
 							<div
