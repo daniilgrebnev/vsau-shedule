@@ -12,7 +12,7 @@ const Header = () => {
 	const open = useAppSelector(store => store.searchReducer.open)
 	const dispatch = useAppDispatch()
 	const [openSearch, setOpenSearch] = useState(open)
-	console.log(openSearch)
+
 	const groups = useAppSelector(state => state.sheduleReducer.initialState.list)
 	const groupId = groups[groups.length - 1]?.groupId
 	return (

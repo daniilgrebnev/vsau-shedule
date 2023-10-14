@@ -6,7 +6,6 @@ import { useState } from 'react'
 
 const SheduleWidget = () => {
 	const [activeParity, setActiveParity] = useState<string>(weekInit.parityEng)
-	console.log(activeParity)
 
 	const Groups = groupss
 
@@ -43,7 +42,7 @@ const SheduleWidget = () => {
 						activeParity === 'numerator' ? 'left-[0%]' : 'left-[50%]'
 					}  top-auto text-center bg-bg-header transition-all duration-200 d`}
 				></div>
-				<div className=' w-full z-20 flex  items-center text-center relative gap-0 justify-betwen h-full'>
+				<div className=' w-full z-20 flex  items-center text-center relative gap-0 justify-between h-full'>
 					<div
 						onClick={() => weekParityHandler('numerator')}
 						className='w-full h-full relative py-1 px-3 text-center rounded-lg '

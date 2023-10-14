@@ -1,5 +1,7 @@
 import WaitTextAnimate from '@/entities/Loading/WaitTextAnimate'
 import { lessonTypes } from '@/entities/weekData/lessonTypes'
+import { weekDays } from '@/entities/weekDay/weekDay'
+import { getGroupSchedule } from '@/features/functions/getApi/api'
 import { useEffect, useState } from 'react'
 
 interface ILessons {
@@ -11,8 +13,33 @@ interface ISchedule {
 	id: number
 	lessons: ILessons[]
 }
+export type Root = Root2[]
 
-const Lessons = ({ weekday, parity, stateDay }: any) => {
+export interface Root2 {
+	weekday: number
+	numerator: Numerator[]
+	denominator: Denominator[]
+}
+
+export interface Numerator {
+	time_start: string
+	time_end: string
+	name: string
+	type: number
+	teacher: string
+	room: string
+}
+
+export interface Denominator {
+	time_start: string
+	time_end: string
+	name: string
+	type: number
+	teacher: string
+	room: string
+}
+
+const Lessons = ({ weekday, parity }: any) => {
 	const [isRender, setIsRender] = useState<boolean>(false)
 
 	useEffect(() => {
@@ -22,37 +49,37 @@ const Lessons = ({ weekday, parity, stateDay }: any) => {
 		return () => clearTimeout(timer)
 	})
 
-	console.log(parity)
-	const [day, setDay] = useState(stateDay)
-	console.log(stateDay)
+	const [scheduleData, setScheduleData] = useState<Root2[]>()
 
-	const [scheduleData, setScheduleData] = useState<ISchedule>()
+	const id = localStorage.getItem('grpoupId')
+
 	useEffect(() => {
-		fetch('https://mocki.io/v1/f4d05396-ac9f-45d6-8e31-858c473dcebd').then(
-			res =>
-				res
-					.clone()
-					.json()
-					.then(data => setScheduleData(data[0]))
-					.catch(err => {
-						console.log(err)
-					})
-		)
+		async function fetchData() {
+			if (id) {
+				const data = await getGroupSchedule(id || '')
+				const middleware = data.data
+				setScheduleData(middleware)
+			}
+		}
+		fetchData()
 	}, [])
 
-	console.log(scheduleData && 'loading')
 	const types = lessonTypes
+	// console.log()
+	// console.log()
 
-	// const currentColor = types.find()
+	// const time = moment('2023-10-12 08:30:00').fromNow()
+	// console.log(time[0] === 'ч' ? time : 'Прошло')
+	console.log()
 
 	return (
 		<div className='w-full'>
 			{isRender ? (
 				<div className='flex flex-col w-full h-[100%]   gap-y-2'>
-					{scheduleData ? (
-						parity == 'numerator' ? (
-							scheduleData?.lessons[weekday - 1]?.numerator.length !== 0 ? (
-								scheduleData?.lessons[weekday - 1]?.numerator.map(item => (
+					{weekDays ? (
+						parity.activeParity == 'numerator' ? (
+							weekDays[weekday - 1].lessons !== null ? (
+								weekDays[weekday - 1]?.lessons?.numerator.map(item => (
 									<div className='transition-all'>
 										<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
 											<div className=' w-full text-left text-sm '>
@@ -87,8 +114,8 @@ const Lessons = ({ weekday, parity, stateDay }: any) => {
 									Нет пар
 								</div>
 							)
-						) : scheduleData?.lessons[weekday - 1]?.denominator.length !== 0 ? (
-							scheduleData?.lessons[weekday - 1]?.denominator.map(item => (
+						) : weekDays[weekday - 1].lessons !== null ? (
+							weekDays[weekday - 1]?.lessons?.denominator.map(item => (
 								<div className='transition-all'>
 									<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
 										<div className=' w-full text-left text-sm '>

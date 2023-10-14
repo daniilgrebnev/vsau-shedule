@@ -4,7 +4,6 @@ import 'moment/locale/ru'
 
 import LogoIcon from '@/entities/icons/LogoIcon'
 import MainPage from '@/widgets/MainPage'
-import moment from 'moment'
 import { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import packages from '../../package.json'
@@ -13,7 +12,6 @@ export default function Home() {
 	const [domLoaded, setDomLoaded] = useState(false)
 	const version = packages.version
 
-	console.log(moment().locale('ru').format('dddd'))
 	useEffect(() => {
 		let timeFunc = setTimeout(() => {
 			setDomLoaded(true)
