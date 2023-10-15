@@ -103,8 +103,11 @@ const Week = (activeParity: any) => {
 			{/*<div className="w-10 h-10 bg-red-reset absolute bottom-0 "></div>*/}
 			{weekDays ? (
 				<div className='flex  w-full justify-center items-center gap-x-1'>
-					{weekDays.map(item => (
-						<div className='z-10 relative rounded-lg overflow-hidden'>
+					{weekDays.map((item, index) => (
+						<div
+							key={index}
+							className='z-10 relative rounded-lg overflow-hidden'
+						>
 							<div
 								key={item.name}
 								onClick={() => activeItem(item.name, item.activeState)}
@@ -124,29 +127,35 @@ const Week = (activeParity: any) => {
 							</div>
 							{parity == 'numerator' ? (
 								<div className=' transition-all absolute bottom-0 w-full left-0  flex items-center justify-center'>
-									{weekDays[item.weekday - 1]?.lessons?.numerator.map(i => (
-										<div
-											style={{
-												background:
-													types.find(color => color.type === i.type)?.color ||
-													'#c47929',
-											}}
-											className={`w-full h-[4px] rounded-lg `}
-										></div>
-									))}
+									{weekDays[item.weekday - 1]?.lessons?.numerator.map(
+										(i, index) => (
+											<div
+												key={index}
+												style={{
+													background:
+														types.find(color => color.type === i.type)?.color ||
+														'#c47929',
+												}}
+												className={`w-full h-[4px] rounded-lg `}
+											></div>
+										)
+									)}
 								</div>
 							) : (
 								<div className='transition-all absolute bottom-0 w-full left-0 gap-x-0.5 flex items-center justify-center'>
-									{weekDays[item.weekday - 1]?.lessons?.denominator?.map(i => (
-										<div
-											style={{
-												background:
-													types.find(color => color.type === i.type)?.color ||
-													'#c47929',
-											}}
-											className={`w-full h-[4px] rounded-lg `}
-										></div>
-									))}
+									{weekDays[item.weekday - 1]?.lessons?.denominator?.map(
+										(i, index) => (
+											<div
+												key={index}
+												style={{
+													background:
+														types.find(color => color.type === i.type)?.color ||
+														'#c47929',
+												}}
+												className={`w-full h-[4px] rounded-lg `}
+											></div>
+										)
+									)}
 								</div>
 							)}
 						</div>

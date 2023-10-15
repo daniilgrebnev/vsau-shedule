@@ -15,8 +15,5 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = withPWA({
 	output: 'export',
-	env: {
-		customKey: 'my-value',
-	},
 })
 module.exports = nextConfig

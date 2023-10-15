@@ -5,6 +5,8 @@ import { getGroup } from '@/store/slices/sheduleCurrentSlice'
 import axios from 'axios'
 import { useState } from 'react'
 
+import { facultyTypes } from '@/entities/facultyTypes'
+import Delete from '@/entities/icons/Delete'
 import { capitalize } from './functions/capitalize'
 import { dayScheduleConstructor } from './functions/getApi/scheduleArrayMiddleware'
 
@@ -63,7 +65,7 @@ const Search = () => {
 				className='absolute cursor-pointer right-3 top-3 font-semibold text-red-reset text-3xl'
 				onClick={() => dispatch(closeSearch())}
 			>
-				X
+				<Delete width={40} fill='#E4473F' />
 			</div>
 			<div className='w-full'>
 				<div className='mx-auto border-b-white  border-b-2 mt-16  text-xl w-11/12'>
@@ -81,11 +83,16 @@ const Search = () => {
 								group?.map(item => (
 									<div className=''>
 										<div
+											style={{
+												borderBottomColor:
+													facultyTypes.find(i => i.num == item.faculty)
+														?.color || 'white',
+											}}
 											key={item.id}
 											onClick={() =>
 												groupHandler(item.id.toString(), item.name)
 											}
-											className='cursor-pointer rounded-lg mb-4 border-b border-ai bg-bg-header w-full p-4 text-xl'
+											className='cursor-pointer rounded-lg mb-4 border-b-2 border-ai bg-bg-header w-full p-4 text-xl'
 										>
 											{item.name}
 										</div>
@@ -101,7 +108,7 @@ const Search = () => {
 						</div>
 					) : (
 						<div className='w-full justify-center text-left items-center  '>
-							<div className=' py-3 px-6 rounded-lg text-xl mx-auto'>
+							<div className=' py-3 px-6 rounded-lg text-lg mx-auto'>
 								Введите название группы <br /> Например: Тэ2-5
 							</div>
 						</div>

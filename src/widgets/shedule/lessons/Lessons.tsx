@@ -82,8 +82,8 @@ const Lessons = ({ weekday, parity }: any) => {
 					{weekDays ? (
 						parity.activeParity == 'numerator' ? (
 							weekDays[weekday - 1].lessons !== null ? (
-								weekDays[weekday - 1]?.lessons?.numerator.map(item => (
-									<div className='transition-all'>
+								weekDays[weekday - 1]?.lessons?.numerator.map((item, index) => (
+									<div className='transition-all' key={index}>
 										<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
 											<div className=' w-full text-left text-sm '>
 												<div className=''>
@@ -93,9 +93,14 @@ const Lessons = ({ weekday, parity }: any) => {
 											<div className=''>
 												<div className='mt-5 flex items-center w-full justify-start'>
 													<div className=''>{item.name}</div>
-													<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
-														{item.room === 'NONE' ? '' : item.room}
-													</div>
+
+													{item.room === 'NONE' ? (
+														''
+													) : (
+														<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
+															{item.room}
+														</div>
+													)}
 												</div>
 												<div
 													style={{
@@ -123,8 +128,8 @@ const Lessons = ({ weekday, parity }: any) => {
 								</div>
 							)
 						) : weekDays[weekday - 1].lessons !== null ? (
-							weekDays[weekday - 1]?.lessons?.denominator.map(item => (
-								<div className='transition-all'>
+							weekDays[weekday - 1]?.lessons?.denominator.map((item, index) => (
+								<div className='transition-all' key={index}>
 									<div className='p-2 bg-bg-header relative rounded-lg w-[90%] mx-auto'>
 										<div className=' w-full text-left text-sm '>
 											<div className=''>
@@ -134,9 +139,13 @@ const Lessons = ({ weekday, parity }: any) => {
 										<div className=''>
 											<div className='mt-5 flex items-center w-full justify-start'>
 												<div className=''>{item.name}</div>
-												<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
-													{item.room === 'NONE' ? '' : item.room}
-												</div>
+												{item.room === 'NONE' ? (
+													''
+												) : (
+													<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
+														{item.room}
+													</div>
+												)}
 											</div>
 											<div
 												style={{

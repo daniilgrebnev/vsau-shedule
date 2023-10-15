@@ -16,7 +16,6 @@
 		"@uidotdev/usehooks": "^2.4.0",
 		"autoprefixer": "10.4.15",
 		"axios": "^1.5.1",
-		"dotenv": "^16.3.1",
 		"moment": "^2.29.4",
 		"next": "13.4.19",
 		"next-offline": "^5.0.5",

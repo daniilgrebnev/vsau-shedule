@@ -5,7 +5,7 @@ const weekNum = Number(moment().format('w'))
 let parityRu = weekNum % 2 !== 0 ? 'Числитель' : 'Знаменатель'
 let parityEng = weekNum % 2 !== 0 ? 'numerator' : 'denominator'
 
-let dayOfWeek = moment().locale('ru').format('dddd')
+let dayOfWeek: string
 
 const dayNum = moment().day()
 console.log(dayNum)
@@ -19,7 +19,7 @@ if (dayNum == 0) {
 		parityRu = 'Знаменатель'
 	}
 } else {
-	// dayOfWeek = moment().locale('ru').format('dddd')
+	dayOfWeek = moment().locale('ru').format('dddd')
 }
 
 const day = moment().format('LL')

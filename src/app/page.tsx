@@ -1,5 +1,6 @@
 'use client'
 import LogoIcon from '@/entities/icons/LogoIcon'
+import Feedback from '@/features/Feedback'
 import store from '@/store'
 import MainPage from '@/widgets/MainPage'
 import 'moment/locale/ru'
@@ -27,6 +28,9 @@ export default function Home() {
 			{domLoaded ? (
 				<main className='w-[524px] h-[100dvh] relative bg-bg-main text-white overflow-hidden '>
 					<MainPage />
+					<div className='absolute p-4 bottom-0 right-0'>
+						<Feedback />
+					</div>
 				</main>
 			) : (
 				<div className='w-[524px] relative h-[100dvh] bg-bg-header flex items-center justify-center'>
