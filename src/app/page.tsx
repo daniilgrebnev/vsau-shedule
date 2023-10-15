@@ -1,12 +1,12 @@
 'use client'
-import store from '@/store'
-import 'moment/locale/ru'
-
 import LogoIcon from '@/entities/icons/LogoIcon'
+import store from '@/store'
 import MainPage from '@/widgets/MainPage'
+import 'moment/locale/ru'
 import { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import packages from '../../package.json'
+import '../font/stylesheet.css'
 
 export default function Home() {
 	const [domLoaded, setDomLoaded] = useState(false)

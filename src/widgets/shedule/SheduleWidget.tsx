@@ -2,6 +2,7 @@ import weekInit from '@/features/functions/weekInit'
 import { useAppSelector } from '@/hooks'
 import groupss from '@/testArrays/groups.json'
 import Week from '@/widgets/shedule/Week'
+import moment from 'moment'
 import { useState } from 'react'
 
 const SheduleWidget = () => {
@@ -15,14 +16,12 @@ const SheduleWidget = () => {
 
 	const WeekCarousel = () => <Week activeParity={activeParity} />
 
-	const groupName = Groups.find(
-		item => item.id === Number(groups[currentArray].groupId)
-	)?.name
+	const groupName = localStorage.getItem('groupName')
 
 	const weekParityHandler = (parity: string) => {
 		setActiveParity(parity)
 	}
-
+	moment().locale('ru')
 	const weekData = weekInit
 	return (
 		<div className=' h-full'>
@@ -35,12 +34,12 @@ const SheduleWidget = () => {
 			<div className='my-5 text-center'>
 				<span className='text-3xl font-semibold'>{groupName}</span>
 			</div>
-			<div className='w-10/12 mx-auto overflow-hidden my-7  relative '>
+			<div className='w-10/12 mx-auto  my-5 py-1  relative '>
 				{/* <div className='absolute w-full h-[36px] bg-bg-header left-0 top-0 opacity-25'></div> */}
 				<div
-					className={`absolute rounded-lg w-1/2 h-full ${
+					className={`absolute rounded-lg w-1/2 h-full top-0 ${
 						activeParity === 'numerator' ? 'left-[0%]' : 'left-[50%]'
-					}  top-auto text-center bg-bg-header transition-all duration-200 d`}
+					}   text-center bg-bg-header transition-all duration-200 d`}
 				></div>
 				<div className=' w-full z-20 flex  items-center text-center relative gap-0 justify-between h-full'>
 					<div

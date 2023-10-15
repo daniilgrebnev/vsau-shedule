@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const prod = process.env.NODE_ENV === 'production'
+const withOffline = require('next-offline')
 
 const runtimeCaching = require('next-pwa/cache')
 const withPWA = require('next-pwa')({
@@ -14,5 +15,8 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = withPWA({
 	output: 'export',
+	env: {
+		customKey: 'my-value',
+	},
 })
 module.exports = nextConfig

@@ -127,8 +127,9 @@ const Week = (activeParity: any) => {
 									{weekDays[item.weekday - 1]?.lessons?.numerator.map(i => (
 										<div
 											style={{
-												background: types.find(color => color.type === i.type)
-													?.color,
+												background:
+													types.find(color => color.type === i.type)?.color ||
+													'#c47929',
 											}}
 											className={`w-full h-[4px] rounded-lg `}
 										></div>
@@ -139,8 +140,9 @@ const Week = (activeParity: any) => {
 									{weekDays[item.weekday - 1]?.lessons?.denominator?.map(i => (
 										<div
 											style={{
-												background: types.find(color => color.type === i.type)
-													?.color,
+												background:
+													types.find(color => color.type === i.type)?.color ||
+													'#c47929',
 											}}
 											className={`w-full h-[4px] rounded-lg `}
 										></div>

@@ -2,6 +2,7 @@ import WaitTextAnimate from '@/entities/Loading/WaitTextAnimate'
 import { lessonTypes } from '@/entities/weekData/lessonTypes'
 import { weekDays } from '@/entities/weekDay/weekDay'
 import { getGroupSchedule } from '@/features/functions/getApi/api'
+import moment from 'moment'
 import { useEffect, useState } from 'react'
 
 interface ILessons {
@@ -67,9 +68,11 @@ const Lessons = ({ weekday, parity }: any) => {
 	const types = lessonTypes
 	// console.log()
 	// console.log()
-
+	const dayNum = moment().day()
+	console.log(dayNum)
 	// const time = moment('2023-10-12 08:30:00').fromNow()
 	// console.log(time[0] === 'ч' ? time : 'Прошло')
+
 	console.log()
 
 	return (
@@ -91,27 +94,32 @@ const Lessons = ({ weekday, parity }: any) => {
 												<div className='mt-5 flex items-center w-full justify-start'>
 													<div className=''>{item.name}</div>
 													<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
-														{item.room}
+														{item.room === 'NONE' ? '' : item.room}
 													</div>
 												</div>
 												<div
 													style={{
 														background: `${
-															types.find(i => i.type === item.type)?.color
+															types.find(i => i.type === item.type)?.color ||
+															'#c47929'
 														}`,
 													}}
 													className={`absolute  font-semibold text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}
 												>
-													{types.find(i => i.type === item.type)?.name}
+													{types.find(i => i.type === item.type)?.name || 'Общ'}
 												</div>
-												<div className='mt-2'>{item.teacher}</div>
+												<div className='mt-2'>
+													{item.teacher === 'NONE' ? '' : item.teacher}
+												</div>
 											</div>
 										</div>
 									</div>
 								))
 							) : (
-								<div className='w-full h-full justify-center items-center text-center text-3xl'>
-									Нет пар
+								<div className='w-full h-[30dvh] absolute bottom-0 justify-center items-center text-center text-4xl'>
+									<div className='bg-bg-header py-3 px-6 rounded-lg w-6/12 mx-auto'>
+										Нет пар
+									</div>
 								</div>
 							)
 						) : weekDays[weekday - 1].lessons !== null ? (
@@ -127,27 +135,32 @@ const Lessons = ({ weekday, parity }: any) => {
 											<div className='mt-5 flex items-center w-full justify-start'>
 												<div className=''>{item.name}</div>
 												<div className='mx-3 px-2 py-1 bg-bg-main rounded-lg'>
-													{item.room}
+													{item.room === 'NONE' ? '' : item.room}
 												</div>
 											</div>
 											<div
 												style={{
 													background: `${
-														types.find(i => i.type === item.type)?.color
+														types.find(i => i.type === item.type)?.color ||
+														'#c47929'
 													}`,
 												}}
 												className={`absolute  font-semibold text-sm top-1 right-1 flex items-center justify-center bg-[] w-14 h-6 rounded-lg`}
 											>
-												{types.find(i => i.type === item.type)?.name}
+												{types.find(i => i.type === item.type)?.name || 'Общ'}
 											</div>
-											<div className='mt-2'>{item.teacher}</div>
+											<div className='mt-2'>
+												{item.teacher === 'NONE' ? '' : item.teacher}
+											</div>
 										</div>
 									</div>
 								</div>
 							))
 						) : (
-							<div className='w-full h-full justify-center items-center text-center text-3xl'>
-								Нет пар
+							<div className='w-full h-[30dvh] absolute bottom-0 justify-center items-center text-center text-4xl'>
+								<div className='bg-bg-header py-3 px-6 rounded-lg w-6/12 mx-auto'>
+									Нет пар
+								</div>
 							</div>
 						)
 					) : (

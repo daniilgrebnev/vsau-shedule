@@ -1,6 +1,6 @@
 {
 	"name": "vsau-shedule",
-	"version": "0.11.1",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -13,10 +13,13 @@
 		"@types/node": "20.6.2",
 		"@types/react": "18.2.22",
 		"@types/react-dom": "18.2.7",
+		"@uidotdev/usehooks": "^2.4.0",
 		"autoprefixer": "10.4.15",
 		"axios": "^1.5.1",
+		"dotenv": "^16.3.1",
 		"moment": "^2.29.4",
 		"next": "13.4.19",
+		"next-offline": "^5.0.5",
 		"next-pwa": "^5.6.0",
 		"postcss": "8.4.30",
 		"react": "18.2.0",
