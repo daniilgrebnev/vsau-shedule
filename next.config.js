@@ -13,7 +13,5 @@ const withPWA = require('next-pwa')({
 	// disable: prod ? false : true
 })
 
-const nextConfig = withPWA({
-	output: 'export',
-})
+const nextConfig = withPWA({})
 module.exports = nextConfig
