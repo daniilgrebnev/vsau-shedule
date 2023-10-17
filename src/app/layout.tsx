@@ -24,10 +24,8 @@ export default function RootLayout({
 				<meta name='twitter:card' content='summary' />
 				<meta name='twitter:site' content='@' />
 				<meta name='twitter:title' content='Официальное Расписание ВГАУ' />
-				<meta
-					name='twitter:description'
-					content='Официальное расписание Воронежского Государственного Аграрного Университета. Разработанное студентами для студентов и преподавателей'
-				/>
+				<meta name='twitter:description' />
+				<meta content='Официальное расписание Воронежского Государственного Аграрного Университета. Разработанное студентами для студентов и преподавателей' />
 				<meta
 					name='twitter:image'
 					content='https://sun9-19.userapi.com/impg/0Qm0NMqt1f7sq-Dg-EkBgLKXnFSBlvYdlx7r5w/20aEnT_4XuI.jpg?size=807x571&quality=95&sign=0f2c513e3c0abea62d639d5d0649375c&c_uniq_tag=Kzr1oGpxrXQQ-QtUvohYe0urwxRycpDW7kwBuqhcNp4&type=album'
