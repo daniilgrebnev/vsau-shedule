@@ -1,6 +1,5 @@
 import React from 'react'
 import './globals.scss'
-;('use client')
 
 export default function RootLayout({
 	children,
