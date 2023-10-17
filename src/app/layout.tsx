@@ -30,7 +30,7 @@ export default function RootLayout({
 				<meta name='description' content='Расписание ВГАУ' />
 				<meta name='msapplication-navbutton-color' content='#212121' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='#212121' />
-				<meta name='twitter:card' content='summary' />
+				<meta name='twitter:card' content='summary_large_image' />
 				<meta name='twitter:site' content='@' />
 				<meta name='twitter:title' content='Расписание ВГАУ' />
 				<meta
